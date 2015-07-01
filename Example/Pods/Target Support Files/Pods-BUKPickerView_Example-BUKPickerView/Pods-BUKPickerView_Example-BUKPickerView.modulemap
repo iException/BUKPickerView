@@ -1,0 +1,6 @@
+framework module BUKPickerView {
+  umbrella header "Pods-BUKPickerView_Example-BUKPickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

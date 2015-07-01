@@ -1,0 +1,17 @@
+PODS:
+  - BUKDynamicPopView (1.0.0)
+  - BUKPickerView (1.0.0):
+    - BUKDynamicPopView (~> 1.0.0)
+
+DEPENDENCIES:
+  - BUKPickerView (from `../`)
+
+EXTERNAL SOURCES:
+  BUKPickerView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BUKDynamicPopView: 1375cc0d6d1dfbde9cc4560d93fa08b9de2bd29a
+  BUKPickerView: b1b57e1921ae059e1f06431ae9ad58d8ecfc436f
+
+COCOAPODS: 0.36.3

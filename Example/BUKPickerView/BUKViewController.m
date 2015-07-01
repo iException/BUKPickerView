@@ -7,23 +7,53 @@
 //
 
 #import "BUKViewController.h"
+#import <BUKPickerView/BUKPickerView.h>
+#import <BUKDynamicPopView/BUKDynamicPopView.h>
 
-@interface BUKViewController ()
+@interface BUKViewController () <BUKPickerViewDataSourceAndDelegate>
+
+@property (nonatomic, strong) BUKPickerView *pickerView;
 
 @end
 
 @implementation BUKViewController
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [super viewDidAppear:animated];
+    
+    [self.pickerView buk_dynamicShowInView:self.view];
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section depth:(NSInteger)depth
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 10;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth
+{
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"test"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test" forIndexPath:indexPath];
+    cell.textLabel.text = @"科技大厦";
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth
+{
+    [self.pickerView push];
+}
+
+- (CGFloat)coverRateForTableView:(UITableView *)tableView depth:(NSInteger)depth
+{
+    return 1.0f;
+}
+
+- (BUKPickerView *)pickerView
+{
+    if (!_pickerView) {
+        _pickerView = [[BUKPickerView alloc] initWithFrame:CGRectMake(10, 0, 300, 500)];
+        _pickerView.delegate = self;
+    }
+    return _pickerView;
+}
 @end

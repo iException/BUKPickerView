@@ -1,0 +1,6 @@
+framework module Pods_BUKPickerView_Tests {
+  umbrella header "Pods-BUKPickerView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
