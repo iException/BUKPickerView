@@ -25,7 +25,7 @@
     if (!view || !view.superview) {
         return;
     }
-    
+
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:view.superview];
     self.animator.delegate = self;
     self.completeBlock = complete;

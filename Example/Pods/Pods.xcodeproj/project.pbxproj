@@ -7,498 +7,583 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02A39B55BFF56EDEF88A6A58 /* Pods-BUKPickerView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD044291AE1F7781B343BCF /* Pods-BUKPickerView_Tests-dummy.m */; };
-		02C855BDEDFCF43718CDA701 /* BUKDynamicPopView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2FFA185368ECEBA560F15D /* BUKDynamicPopView.framework */; };
-		075F1E515FE080209DBFFDF7 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E848BC0A72D639D31EBF2329 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A949C092A166D321118C671 /* BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588DDB7117D4BBDBDD33D67 /* BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C41C399F2D1FA272321100D /* BUKDynamicBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6C8586DEA3DFD06062918F /* BUKDynamicBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		173A684DBFADDF8DB8F97000 /* UIView+BUKDynamicPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDB430AE734F31120E233C /* UIView+BUKDynamicPopView.m */; };
-		1ACD6634694072E2E9F99255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		1AEE50B99AAD5F1DCD04486A /* BUKGravityCollisionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = F096FE9A67C1E723B34E3E38 /* BUKGravityCollisionBehavior.m */; };
-		1B46F52EC318EAAF6C63C5A0 /* BUKDynamicPopViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2AD30C96BDA7E8D2DFDC8F /* BUKDynamicPopViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CB8562CE3CC161AF6B63E13 /* BUKGravityCollisionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 42DD84238646C5CAE340AB9A /* BUKGravityCollisionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		202601AB36A304CF13429B59 /* BUKGravityCollisionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = F096FE9A67C1E723B34E3E38 /* BUKGravityCollisionBehavior.m */; };
-		207311A3360B745D074F56AE /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B664A2F0F12B5975320DEA1 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */; };
-		2107C14B663358928DC4E6F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		28F7C88FC340043DAFC48423 /* BUKGravityCollisionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 42DD84238646C5CAE340AB9A /* BUKGravityCollisionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		328FA67D0AEA8D0AC53F037C /* BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588DDB7117D4BBDBDD33D67 /* BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E7C265148401DDF72876E97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		3FACFF04D608F875A9DDA2D3 /* BUKXOrYMoveAnimationStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEFF886AA388E72A7FA40A /* BUKXOrYMoveAnimationStyle.m */; };
-		46E3BAB181CD8DB2E3C87BE2 /* BUKPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74CD5E22C2032E92197042C5 /* BUKPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CCA15C4768747E16D81EDFA /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D83867E59876C39CFD7472 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		559339C43FA8D3032AB90CA8 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076A2648E8250A251DD6D5A /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */; };
-		57BB4989F7E5FCE2FD02DCDB /* BUKDynamicAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A6F9637E4610B6EDE02BA0 /* BUKDynamicAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CFE0020F88990DBCA5B1B8F /* BUKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5EF8A7D04A9024B130A505 /* BUKPickerView.m */; };
-		5DE45349B7CB13F27B9AB5AC /* BUKXOrYMoveAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E57C4A0F6B6DB0E104C556 /* BUKXOrYMoveAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AA403E5BE7BF68CCC553250 /* BUKDynamicAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A6F9637E4610B6EDE02BA0 /* BUKDynamicAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70C15D97F57DCBB6445AE289 /* BUKDynamicPopViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2AD30C96BDA7E8D2DFDC8F /* BUKDynamicPopViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71136A4A8E2CE5FAC3A68612 /* BUKUIViewAnimationBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = D353B8E0C841B40C47C0639E /* BUKUIViewAnimationBehavior.m */; };
-		7528CA0819C90225F07048F5 /* BUKDynamicBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6C8586DEA3DFD06062918F /* BUKDynamicBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		773AFA91197785D530DCC3C2 /* UIView+BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = E0E0623EBE6EA67C5D90A89B /* UIView+BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FE08E766A41CAE9630685D5 /* UIView+BUKDynamicPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDB430AE734F31120E233C /* UIView+BUKDynamicPopView.m */; };
-		90300ACA399FC0F7C36234A8 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D3F75C62984CB96AE503D66 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90FDD439D5E33EA4AED24B43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		9BA88ECE0A112B1229F60882 /* BUKUIViewAnimationBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = EF87D9CB20F075410CB45C0C /* BUKUIViewAnimationBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3A2AA348F7128B36551809D /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C18D1DE060C91EC52227D914 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC2AF9AE12B28EBA458D31EE /* BUKDynamicPopView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2FFA185368ECEBA560F15D /* BUKDynamicPopView.framework */; };
-		B2E107A6B8EEF0F268AA7F15 /* Pods-BUKPickerView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D79D8EF857A058FE524E32E2 /* Pods-BUKPickerView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B551541A64926469FE3F9E61 /* BUKXOrYMoveAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E57C4A0F6B6DB0E104C556 /* BUKXOrYMoveAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD73CCC41C8FB058014F6D6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		BED3694AE586BC2ACD0A4A7B /* BUKUIViewAnimationBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = EF87D9CB20F075410CB45C0C /* BUKUIViewAnimationBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF7DD50487F34030FCDEE556 /* BUKXOrYMoveAnimationStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEFF886AA388E72A7FA40A /* BUKXOrYMoveAnimationStyle.m */; };
-		C138AAD9B82C1E414936DCE3 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A7EE67FDE0236C91779492 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */; };
-		C1895A35E0D21979D0AAF957 /* BUKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5EF8A7D04A9024B130A505 /* BUKPickerView.m */; };
-		D94E4DC0FB2D7353AC96726C /* Pods-BUKPickerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E84B9E132E8118B046182141 /* Pods-BUKPickerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9DBFC5C1DA27F5FA5BD32E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597356B036C0CFAD804E4CA7 /* Foundation.framework */; };
-		DA2E1D7F984352D967A92F52 /* BUKUIViewAnimationBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = D353B8E0C841B40C47C0639E /* BUKUIViewAnimationBehavior.m */; };
-		DEB1778BA4F2E9E9722F75A7 /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A219443FFAC6E428545CC7B /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */; };
-		E7F02DEED33E8A700C87CDFC /* BUKPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 74CD5E22C2032E92197042C5 /* BUKPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAF8B6D55293D5F9694580A6 /* UIView+BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = E0E0623EBE6EA67C5D90A89B /* UIView+BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F623283AC5C54DA0D1A6ADAA /* Pods-BUKPickerView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C63DF549E95A0D6BDA177A69 /* Pods-BUKPickerView_Example-dummy.m */; };
+		0023D76F4EF9BDD3AE0BEEDE /* BUKUIViewAnimationBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832EAE7E30A09064173CFCA /* BUKUIViewAnimationBehavior.m */; };
+		06FF84D936B3EB2AA5E5A1D7 /* BUKPickerViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7226C77D59131C999D3A41 /* BUKPickerViewDefaultCell.m */; };
+		0DC0E25DBB8503B92FB8EF6C /* Pods-BUKPickerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AD948DD85A1D27A0660F4B /* Pods-BUKPickerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10C7592B48EF2C2FE2324EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		11285734095C843CB6AC8D0F /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 250670F854E28D24B0CD25D1 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11B193BF16C9B0ED5A5D3866 /* UIView+BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5BC79331982A7EB9D99C7F /* UIView+BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19208A311A70E1301102E941 /* BUKDynamicPopViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C57F3FAB74825BAF883467A /* BUKDynamicPopViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC9A769D7D34F7DD418A83F /* BUKGravityCollisionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F269C696E9849E2A0158A44 /* BUKGravityCollisionBehavior.m */; };
+		1CB44B06B165E2E0288F6565 /* UIView+BUKDynamicPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902458E24B00A883A3DE9F1 /* UIView+BUKDynamicPopView.m */; };
+		1CC00C0EDCFFF8284582D85A /* BUKGravityCollisionBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F269C696E9849E2A0158A44 /* BUKGravityCollisionBehavior.m */; };
+		286EC6E1221D551146FFF168 /* BUKPickerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 190BFF22141287CCE5F10E18 /* BUKPickerViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31548CA84B4517D841C0F1EE /* BUKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C713DD8CAD2D2BCDE1F3127A /* BUKPickerView.m */; };
+		31C6C1989AF124297CE94C77 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B0D41FECA94052E369EBCED /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3269F9DBE454622E6C49B310 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E60A4966D65BDBF7470925D1 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */; };
+		32F09B34E1D78DA830DFBCFD /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C2E04338BB292DD247BDC /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */; };
+		34B176B595F3673C470B45B4 /* BUKPickerViewDefaultCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 894556D4DC6F7543494AF0BC /* BUKPickerViewDefaultCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34B7D388DB3DB0601A462175 /* BUKDynamicBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = A0981FA31EFCB3EF0B96AF95 /* BUKDynamicBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		390DD0E6226D2BC270B9751C /* BUKGravityCollisionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F47581801A8B4194BB43F1 /* BUKGravityCollisionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DC744A50DA74A3F149D2A4D /* BUKPickerTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3540875163278A60C6230383 /* BUKPickerTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F618F4D05FD08D609A57EF7 /* Pods-BUKPickerView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9897232F9D69CE3D4E665FF4 /* Pods-BUKPickerView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		469A20E6D7D49AF62331E00B /* BUKDynamicAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DB06AEDCC0FA62DD2964284E /* BUKDynamicAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B9528DE304B04289951B063 /* BUKPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72502F2FD28467883BF044FB /* BUKPickerViewModel.m */; };
+		5206B72E2F6A69C260B3D231 /* BUKPickerTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3540875163278A60C6230383 /* BUKPickerTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BB8F635D1F08A467432E9D6 /* BUKDynamicPopViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C57F3FAB74825BAF883467A /* BUKDynamicPopViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C143344C19937D0F517A98E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		7972EF7D0947BDAF0E446253 /* BUKDynamicAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DB06AEDCC0FA62DD2964284E /* BUKDynamicAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A1E44CDC63E8963BEE8BE7D /* BUKDynamicBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = A0981FA31EFCB3EF0B96AF95 /* BUKDynamicBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		826763025661E0C49BE10996 /* BUKPickerTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BAE8D0D904344C3AB00C2 /* BUKPickerTitleView.m */; };
+		87EEDEA83D59B1137E5D4794 /* BUKUIViewAnimationBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 7182A063CDD2500C89DE6D42 /* BUKUIViewAnimationBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DB1ADA693BC88C49D059382 /* BUKDynamicPopView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194593C75CBE3F4282B2C969 /* BUKDynamicPopView.framework */; };
+		92F17E1E8F5CAD9342004E42 /* BUKGravityCollisionBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F47581801A8B4194BB43F1 /* BUKGravityCollisionBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9404977364FB505BE7F06C3F /* BUKXOrYMoveAnimationStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D78C0629184BDA14D4817F /* BUKXOrYMoveAnimationStyle.m */; };
+		9D348EF5378EA553A94F3E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		9DF55942EE34682C69D4B127 /* BUKPickerTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BAE8D0D904344C3AB00C2 /* BUKPickerTitleView.m */; };
+		9E8C8FDE9E0F589D2BDE80A2 /* BUKPickerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 190BFF22141287CCE5F10E18 /* BUKPickerViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F24509C68608D6A5F25C779 /* BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF95E2C1277C8EE8C9D581F7 /* BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FB33E76AFFC8A52748CA44F /* BUKPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72502F2FD28467883BF044FB /* BUKPickerViewModel.m */; };
+		A335F033F6FB855E4543305F /* BUKUIViewAnimationBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832EAE7E30A09064173CFCA /* BUKUIViewAnimationBehavior.m */; };
+		A75F3CE79E721A347B7B3E35 /* BUKXOrYMoveAnimationStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D78C0629184BDA14D4817F /* BUKXOrYMoveAnimationStyle.m */; };
+		A99AC09FAC9A232E2C1B20EA /* BUKPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 020795550BE9D863E477BD4E /* BUKPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAB6350F05F9A14F27C07430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		AAC70EBE025A77169D1CEE0A /* BUKDynamicPopView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194593C75CBE3F4282B2C969 /* BUKDynamicPopView.framework */; };
+		AB20B098867165C7F2C023B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		AF5053A419FB38A1406BEB92 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32BF6C0A8404EC4F3ACD27F0 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B950B84FB51627D985FD7DA6 /* Pods-BUKPickerView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5B356D40B03DCC64FBD6B7 /* Pods-BUKPickerView_Example-dummy.m */; };
+		C22B1A348594179D989AE8DE /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA1114998A6051533121FB3 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */; };
+		C36155DF2B36E4FBA29D4BD4 /* Pods-BUKPickerView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2600724CB054E23E7DCAAFA8 /* Pods-BUKPickerView_Tests-dummy.m */; };
+		C40AF4D1D38BAB285595D93B /* BUKPickerViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7226C77D59131C999D3A41 /* BUKPickerViewDefaultCell.m */; };
+		C61879CA3B25BE8A64B0AD54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */; };
+		C9F36B6ECF7378962396B271 /* BUKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C713DD8CAD2D2BCDE1F3127A /* BUKPickerView.m */; };
+		CC1CE7D45E1FDECA073729DF /* BUKXOrYMoveAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 414FDE1BD8CB8FF3EF668E7F /* BUKXOrYMoveAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD8F92257AE13B0D981DC67A /* BUKPickerViewDefaultCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 894556D4DC6F7543494AF0BC /* BUKPickerViewDefaultCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2645508935C59247A139C5B /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA9E35C14AE497BD6061562 /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */; };
+		DB9678B4896A548FC1BCCBA2 /* UIView+BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5BC79331982A7EB9D99C7F /* UIView+BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3DA3D4FAB50D3D6C0594B97 /* BUKXOrYMoveAnimationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 414FDE1BD8CB8FF3EF668E7F /* BUKXOrYMoveAnimationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E581E952AA3B24532EBD1F98 /* UIView+BUKDynamicPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1902458E24B00A883A3DE9F1 /* UIView+BUKDynamicPopView.m */; };
+		EDFD88701AD5E4D14DA982B7 /* BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF95E2C1277C8EE8C9D581F7 /* BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4C5C97AE9DEC2A4E8E59199 /* BUKUIViewAnimationBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 7182A063CDD2500C89DE6D42 /* BUKUIViewAnimationBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB671FDDE88740304AE64782 /* BUKPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 020795550BE9D863E477BD4E /* BUKPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC9EAF4D400595322E2F1FE8 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F9BDC840100A8582AE5DB3 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		587836E6395ED45441507120 /* PBXContainerItemProxy */ = {
+		0DDCCDBA300383F0A40614C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7A86E92621BD3327008BA755;
-			remoteInfo = "Pods-BUKPickerView_Example-BUKPickerView";
-		};
-		5E08673C8BC11636E2B73B1D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E5E68A71A7391EF14A0E97B;
+			remoteGlobalIDString = ADDD2688868D19F56A9B9FFA;
 			remoteInfo = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
 		};
-		88477F5096D4D2C80145B62F /* PBXContainerItemProxy */ = {
+		110D749180872E664519F6B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0058DB252C284B0595149407;
-			remoteInfo = "Pods-BUKPickerView_Example-BUKDynamicPopView";
-		};
-		A0ABF93E99E6492B368EBD26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E5E68A71A7391EF14A0E97B;
-			remoteInfo = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
-		};
-		D7AF738FC411EEC6DF57362A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A4044F20B38DBA4CAA0BF94;
+			remoteGlobalIDString = 1DCFD11031ECA5AA0E433825;
 			remoteInfo = "Pods-BUKPickerView_Tests-BUKPickerView";
 		};
-		F47E5F22A0C406880817B3C7 /* PBXContainerItemProxy */ = {
+		C3654D3A497D304EB7BFFF3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 05DC72AEDD0A51893056FE39 /* Project object */;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0058DB252C284B0595149407;
+			remoteGlobalIDString = 9CE4F06CE2A04C3A29655F61;
 			remoteInfo = "Pods-BUKPickerView_Example-BUKDynamicPopView";
+		};
+		CB543E676C914B9A8BBE52BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CE4F06CE2A04C3A29655F61;
+			remoteInfo = "Pods-BUKPickerView_Example-BUKDynamicPopView";
+		};
+		E88DD49A6927EED7BAE33991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDD2688868D19F56A9B9FFA;
+			remoteInfo = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
+		};
+		FB73F2FEFF2CF33EB0D29A66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C171C10917F613A71EB6BA99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C7E139F476737097D6128A9;
+			remoteInfo = "Pods-BUKPickerView_Example-BUKPickerView";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0624DFEFE9BA397460519E4E /* Pods-BUKPickerView_Tests-BUKPickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-BUKPickerView_Tests-BUKPickerView.modulemap"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap"; sourceTree = "<group>"; };
-		122E6127182862C68B33601E /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		132A7BC668CFA0032B12F746 /* Pods_BUKPickerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUKPickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13A7EE67FDE0236C91779492 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m"; sourceTree = "<group>"; };
-		1B05AA9FCEB3DA4FCC8CEF91 /* Pods-BUKPickerView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BUKPickerView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1C24EC3A5C11659B901125AD /* Pods-BUKPickerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		26CC9DDC8A66EFE64842B2E4 /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig"; sourceTree = "<group>"; };
-		2A067819C36F41C345757EEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C2FFA185368ECEBA560F15D /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3076A2648E8250A251DD6D5A /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m"; sourceTree = "<group>"; };
-		32CEFF886AA388E72A7FA40A /* BUKXOrYMoveAnimationStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKXOrYMoveAnimationStyle.m; path = Pod/animationStyles/BUKXOrYMoveAnimationStyle.m; sourceTree = "<group>"; };
-		32DFA6D994DD111207F186E2 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap"; sourceTree = "<group>"; };
-		335FBFCE3731772D4160B3FC /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig"; sourceTree = "<group>"; };
-		3A44C882303CBE0B4F78BD83 /* Pods-BUKPickerView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BUKPickerView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3CC6858E55841141175C8890 /* Pods-BUKPickerView_Tests-BUKPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKPickerView.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.xcconfig"; sourceTree = "<group>"; };
-		42DD84238646C5CAE340AB9A /* BUKGravityCollisionBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKGravityCollisionBehavior.h; path = Pod/dynamicBehaviors/BUKGravityCollisionBehavior.h; sourceTree = "<group>"; };
-		4588DDB7117D4BBDBDD33D67 /* BUKDynamicPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicPopView.h; path = Pod/BUKDynamicPopView.h; sourceTree = "<group>"; };
-		46F5CD626FD4C1BC504FF35D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig"; sourceTree = "<group>"; };
-		4737C712B9C2E0F56C02B104 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4877CCF582E8B5E64CA640EF /* Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch"; sourceTree = "<group>"; };
-		4AC1577292F6B85D7BB49723 /* Pods-BUKPickerView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		4C6C8586DEA3DFD06062918F /* BUKDynamicBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicBehavior.h; path = Pod/protocols/BUKDynamicBehavior.h; sourceTree = "<group>"; };
-		597356B036C0CFAD804E4CA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5C03CB39F1A1EA32FCEA689D /* Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig"; sourceTree = "<group>"; };
-		5C53EC9C190DD7C9A8EBF322 /* Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap"; sourceTree = "<group>"; };
-		6A755A1165DDBBF62902BFCA /* BUKPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B664A2F0F12B5975320DEA1 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-BUKPickerView-dummy.m"; sourceTree = "<group>"; };
-		6D3F75C62984CB96AE503D66 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h"; sourceTree = "<group>"; };
-		74CD5E22C2032E92197042C5 /* BUKPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerView.h; sourceTree = "<group>"; };
-		7777A67CCE3BB613D6FD6817 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig"; sourceTree = "<group>"; };
-		77FF5A08144F13AC166F39C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Info.plist"; sourceTree = "<group>"; };
-		7FB1B492D74E57494173A7DB /* Pods-BUKPickerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		820137404328829C9B993409 /* Pods-BUKPickerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example.modulemap"; sourceTree = "<group>"; };
-		8423EB7814893D9C25B574A4 /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		862FBFC066844F6ABB173F98 /* Pods-BUKPickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8B31454FEB8AC7056D58996B /* BUKPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C269463573B15FD4072943F /* Pods-BUKPickerView_Example-BUKPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKPickerView.xcconfig"; sourceTree = "<group>"; };
-		8E6C05E99D236475FC600AC7 /* Pods-BUKPickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		946B7B363070A5D56CE97073 /* Pods-BUKPickerView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Tests.modulemap"; sourceTree = "<group>"; };
-		956C08D3E054FB1C394EFA97 /* Pods-BUKPickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9790E72404EC9AF2286DBB50 /* Pods-BUKPickerView_Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Tests-environment.h"; sourceTree = "<group>"; };
-		9812A8525DA74EF99066A99A /* Pods-BUKPickerView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BUKPickerView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		99C4E9170B69337A3CC26D3A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A219443FFAC6E428545CC7B /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BUKPickerView_Tests-BUKPickerView-dummy.m"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-dummy.m"; sourceTree = "<group>"; };
-		9CD044291AE1F7781B343BCF /* Pods-BUKPickerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Tests-dummy.m"; sourceTree = "<group>"; };
-		9D34E4E3C9E1234291C8F9E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist"; sourceTree = "<group>"; };
-		A008E7FD12D0D67B97DDD1A9 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig"; sourceTree = "<group>"; };
-		A985CA2CED082821CFB8E3CE /* Pods_BUKPickerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUKPickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACB8871D0BF9E892660AEC27 /* Pods-BUKPickerView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Example-resources.sh"; sourceTree = "<group>"; };
-		AE2AD30C96BDA7E8D2DFDC8F /* BUKDynamicPopViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicPopViewDelegate.h; path = Pod/protocols/BUKDynamicPopViewDelegate.h; sourceTree = "<group>"; };
-		B163EAA644143F0CE5971287 /* Pods-BUKPickerView_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-environment.h"; sourceTree = "<group>"; };
-		B443A01FBB0F9E2FA2F689D0 /* Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch"; sourceTree = "<group>"; };
-		B5E57C4A0F6B6DB0E104C556 /* BUKXOrYMoveAnimationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKXOrYMoveAnimationStyle.h; path = Pod/animationStyles/BUKXOrYMoveAnimationStyle.h; sourceTree = "<group>"; };
-		BAFDB430AE734F31120E233C /* UIView+BUKDynamicPopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BUKDynamicPopView.m"; path = "Pod/UIView+BUKDynamicPopView.m"; sourceTree = "<group>"; };
-		BE5EF8A7D04A9024B130A505 /* BUKPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerView.m; sourceTree = "<group>"; };
-		C18D1DE060C91EC52227D914 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h"; sourceTree = "<group>"; };
-		C57CD75198676990FB593C35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C63DF549E95A0D6BDA177A69 /* Pods-BUKPickerView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-dummy.m"; sourceTree = "<group>"; };
-		D353B8E0C841B40C47C0639E /* BUKUIViewAnimationBehavior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKUIViewAnimationBehavior.m; path = Pod/dynamicBehaviors/BUKUIViewAnimationBehavior.m; sourceTree = "<group>"; };
-		D36B1CA8A15F8A654D9AF6F2 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch"; sourceTree = "<group>"; };
-		D63D9D93F118AFCDE63F69A4 /* Pods-BUKPickerView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Tests-resources.sh"; sourceTree = "<group>"; };
-		D79D8EF857A058FE524E32E2 /* Pods-BUKPickerView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		DB24BFE6058DBF85EB082771 /* Pods-BUKPickerView_Example-BUKPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKPickerView-prefix.pch"; sourceTree = "<group>"; };
-		E0CDBA7C1C9B310CE5AE5191 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0E0623EBE6EA67C5D90A89B /* UIView+BUKDynamicPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BUKDynamicPopView.h"; path = "Pod/UIView+BUKDynamicPopView.h"; sourceTree = "<group>"; };
-		E1A6F9637E4610B6EDE02BA0 /* BUKDynamicAnimationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicAnimationStyle.h; path = Pod/protocols/BUKDynamicAnimationStyle.h; sourceTree = "<group>"; };
-		E848BC0A72D639D31EBF2329 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h"; sourceTree = "<group>"; };
-		E84B9E132E8118B046182141 /* Pods-BUKPickerView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-umbrella.h"; sourceTree = "<group>"; };
-		EF87D9CB20F075410CB45C0C /* BUKUIViewAnimationBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKUIViewAnimationBehavior.h; path = Pod/dynamicBehaviors/BUKUIViewAnimationBehavior.h; sourceTree = "<group>"; };
-		F096FE9A67C1E723B34E3E38 /* BUKGravityCollisionBehavior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKGravityCollisionBehavior.m; path = Pod/dynamicBehaviors/BUKGravityCollisionBehavior.m; sourceTree = "<group>"; };
-		F402EE5468F38C8E8D1B89B0 /* Pods-BUKPickerView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BUKPickerView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		F6D83867E59876C39CFD7472 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKPickerView-umbrella.h"; sourceTree = "<group>"; };
-		F919FFD78F0E6EC12575B5F7 /* Pods-BUKPickerView_Example-BUKPickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example-BUKPickerView.modulemap"; sourceTree = "<group>"; };
+		020795550BE9D863E477BD4E /* BUKPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerView.h; sourceTree = "<group>"; };
+		02F95974CBCCA4BEA7A54E66 /* Pods-BUKPickerView_Example-BUKPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKPickerView-prefix.pch"; sourceTree = "<group>"; };
+		0597A43F7158D0499C5E483D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig"; sourceTree = "<group>"; };
+		08AF122CC114F244E12FB865 /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig"; sourceTree = "<group>"; };
+		0ABA4A0C7FCE4792D969F4F4 /* Pods-BUKPickerView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BUKPickerView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0B0D41FECA94052E369EBCED /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h"; sourceTree = "<group>"; };
+		0EF70EEB6D83276B60E22E38 /* Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig"; sourceTree = "<group>"; };
+		0F62689C09F6397056308E51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1819BD4311C8EBCF22FFD6DB /* Pods-BUKPickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1902458E24B00A883A3DE9F1 /* UIView+BUKDynamicPopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BUKDynamicPopView.m"; path = "Pod/UIView+BUKDynamicPopView.m"; sourceTree = "<group>"; };
+		190BFF22141287CCE5F10E18 /* BUKPickerViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerViewModel.h; sourceTree = "<group>"; };
+		194593C75CBE3F4282B2C969 /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F818FC9EFDE47DCF8FFB342 /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		250670F854E28D24B0CD25D1 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h"; sourceTree = "<group>"; };
+		2600724CB054E23E7DCAAFA8 /* Pods-BUKPickerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Tests-dummy.m"; sourceTree = "<group>"; };
+		2832EAE7E30A09064173CFCA /* BUKUIViewAnimationBehavior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKUIViewAnimationBehavior.m; path = Pod/dynamicBehaviors/BUKUIViewAnimationBehavior.m; sourceTree = "<group>"; };
+		2E2C2E04338BB292DD247BDC /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m"; sourceTree = "<group>"; };
+		2E7226C77D59131C999D3A41 /* BUKPickerViewDefaultCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerViewDefaultCell.m; sourceTree = "<group>"; };
+		32BF6C0A8404EC4F3ACD27F0 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKPickerView-umbrella.h"; sourceTree = "<group>"; };
+		3540875163278A60C6230383 /* BUKPickerTitleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerTitleView.h; sourceTree = "<group>"; };
+		39123513F442C62505E2C7A6 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap"; sourceTree = "<group>"; };
+		3B0F8A93745FAA838BCF547D /* Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig"; sourceTree = "<group>"; };
+		3F269C696E9849E2A0158A44 /* BUKGravityCollisionBehavior.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKGravityCollisionBehavior.m; path = Pod/dynamicBehaviors/BUKGravityCollisionBehavior.m; sourceTree = "<group>"; };
+		414FDE1BD8CB8FF3EF668E7F /* BUKXOrYMoveAnimationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKXOrYMoveAnimationStyle.h; path = Pod/animationStyles/BUKXOrYMoveAnimationStyle.h; sourceTree = "<group>"; };
+		4D0B58EE9826EE75DD1F9BDF /* Pods-BUKPickerView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Tests-resources.sh"; sourceTree = "<group>"; };
+		4ECF78B317468335DAFF68A5 /* Pods-BUKPickerView_Example-BUKPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example-BUKPickerView.xcconfig"; sourceTree = "<group>"; };
+		5639E3FF0D4BBB9DE9C3158A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5A38B5E0D18A2AE6718F2184 /* Pods-BUKPickerView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Tests.modulemap"; sourceTree = "<group>"; };
+		5C57F3FAB74825BAF883467A /* BUKDynamicPopViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicPopViewDelegate.h; path = Pod/protocols/BUKDynamicPopViewDelegate.h; sourceTree = "<group>"; };
+		63C675F180A616E7B09451E2 /* Pods-BUKPickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D8E300B3D95193721ADA6C2 /* Pods-BUKPickerView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Example-resources.sh"; sourceTree = "<group>"; };
+		7182A063CDD2500C89DE6D42 /* BUKUIViewAnimationBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKUIViewAnimationBehavior.h; path = Pod/dynamicBehaviors/BUKUIViewAnimationBehavior.h; sourceTree = "<group>"; };
+		72502F2FD28467883BF044FB /* BUKPickerViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerViewModel.m; sourceTree = "<group>"; };
+		75480DEE06B295D7EB256D05 /* Pods-BUKPickerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7B2963D7D6BFFADC54CC3BA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CD37094FEC935696315F368 /* Pods-BUKPickerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example.modulemap"; sourceTree = "<group>"; };
+		7CF52DA19E1368D05C94E6BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist"; sourceTree = "<group>"; };
+		7D082F23F3AE816A5EC53850 /* Pods-BUKPickerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		81676126B11EA2C8D8CC5BE8 /* Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap"; sourceTree = "<group>"; };
+		8320A37CF51631299FA261B8 /* Pods_BUKPickerView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUKPickerView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		894556D4DC6F7543494AF0BC /* BUKPickerViewDefaultCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerViewDefaultCell.h; sourceTree = "<group>"; };
+		8B9BAE8D0D904344C3AB00C2 /* BUKPickerTitleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerTitleView.m; sourceTree = "<group>"; };
+		8C7C722302C4797825655E0C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9351C09365579CDF4BC9E918 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Info.plist"; sourceTree = "<group>"; };
+		9578358C00FE72C709A0278B /* Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch"; sourceTree = "<group>"; };
+		9823C4FE4ABDC5D0721756B7 /* Pods-BUKPickerView_Tests-BUKPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKPickerView.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.xcconfig"; sourceTree = "<group>"; };
+		9897232F9D69CE3D4E665FF4 /* Pods-BUKPickerView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9BDDDCAED97BC3D9EE918FB3 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch"; sourceTree = "<group>"; };
+		A0981FA31EFCB3EF0B96AF95 /* BUKDynamicBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicBehavior.h; path = Pod/protocols/BUKDynamicBehavior.h; sourceTree = "<group>"; };
+		A2BD46E9E991F96E9BC2D098 /* Pods-BUKPickerView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BUKPickerView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		A2F47581801A8B4194BB43F1 /* BUKGravityCollisionBehavior.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKGravityCollisionBehavior.h; path = Pod/dynamicBehaviors/BUKGravityCollisionBehavior.h; sourceTree = "<group>"; };
+		AB00B32678A6B3C3CECE83BC /* BUKPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7AA9F4C267FE56015E5B7D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DF0DE86C9BA0EFFD31B379 /* Pods-BUKPickerView_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-environment.h"; sourceTree = "<group>"; };
+		B7CD1B14447C9113329CC45D /* Pods-BUKPickerView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BUKPickerView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BF95E2C1277C8EE8C9D581F7 /* BUKDynamicPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicPopView.h; path = Pod/BUKDynamicPopView.h; sourceTree = "<group>"; };
+		BFE327C45DBB75E3188FE885 /* Pods-BUKPickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BUKPickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C08A2FF03A71408A0E7FEA7E /* Pods-BUKPickerView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BUKPickerView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C0AD948DD85A1D27A0660F4B /* Pods-BUKPickerView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-umbrella.h"; sourceTree = "<group>"; };
+		C1F9BDC840100A8582AE5DB3 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h"; sourceTree = "<group>"; };
+		C713DD8CAD2D2BCDE1F3127A /* BUKPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerView.m; sourceTree = "<group>"; };
+		CDA1114998A6051533121FB3 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-BUKPickerView-dummy.m"; sourceTree = "<group>"; };
+		CF5B356D40B03DCC64FBD6B7 /* Pods-BUKPickerView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-dummy.m"; sourceTree = "<group>"; };
+		D2D78C0629184BDA14D4817F /* BUKXOrYMoveAnimationStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUKXOrYMoveAnimationStyle.m; path = Pod/animationStyles/BUKXOrYMoveAnimationStyle.m; sourceTree = "<group>"; };
+		D33A9B8ECCB284C11E3D77C0 /* Pods-BUKPickerView_Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Tests-environment.h"; sourceTree = "<group>"; };
+		D799D2AFC09E5A86BE9F0BD5 /* Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch"; sourceTree = "<group>"; };
+		DA537AEE53E33B46CEEA641C /* Pods-BUKPickerView_Example-BUKPickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BUKPickerView_Example-BUKPickerView.modulemap"; sourceTree = "<group>"; };
+		DABE848A4F40A7C059B3B143 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig"; sourceTree = "<group>"; };
+		DB06AEDCC0FA62DD2964284E /* BUKDynamicAnimationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicAnimationStyle.h; path = Pod/protocols/BUKDynamicAnimationStyle.h; sourceTree = "<group>"; };
+		DD393A724E0416CC549FB1C1 /* Pods-BUKPickerView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BUKPickerView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E22FC2596617CFB51D894304 /* BUKDynamicPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKDynamicPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E00701D65DC621B01B0578 /* Pods_BUKPickerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUKPickerView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D86A315B47A4809818692D /* BUKPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BUKPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CC98175B2AA963083BC67C /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig"; sourceTree = "<group>"; };
+		E60A4966D65BDBF7470925D1 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m"; sourceTree = "<group>"; };
+		ED498B098F4E1D162B9F9C25 /* Pods-BUKPickerView_Tests-BUKPickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-BUKPickerView_Tests-BUKPickerView.modulemap"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap"; sourceTree = "<group>"; };
+		EDA9E35C14AE497BD6061562 /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BUKPickerView_Tests-BUKPickerView-dummy.m"; path = "../Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-dummy.m"; sourceTree = "<group>"; };
+		FD5BC79331982A7EB9D99C7F /* UIView+BUKDynamicPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BUKDynamicPopView.h"; path = "Pod/UIView+BUKDynamicPopView.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3CA9AD89A54DC7D9281F91AE /* Frameworks */ = {
+		090349D1788AC331DCC9E9CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2AF9AE12B28EBA458D31EE /* BUKDynamicPopView.framework in Frameworks */,
-				3E7C265148401DDF72876E97 /* Foundation.framework in Frameworks */,
+				AAC70EBE025A77169D1CEE0A /* BUKDynamicPopView.framework in Frameworks */,
+				C61879CA3B25BE8A64B0AD54 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D7ACAAA168F743CF4250E86 /* Frameworks */ = {
+		41B6BCD756800BD1310BC25D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02C855BDEDFCF43718CDA701 /* BUKDynamicPopView.framework in Frameworks */,
-				1ACD6634694072E2E9F99255 /* Foundation.framework in Frameworks */,
+				10C7592B48EF2C2FE2324EDA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EE8F6CD61AFCF2631AFF733 /* Frameworks */ = {
+		4CCEC98FC077A020B62DC5E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD73CCC41C8FB058014F6D6D /* Foundation.framework in Frameworks */,
+				6C143344C19937D0F517A98E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EAC57CD8DB5477333A757B2 /* Frameworks */ = {
+		4FFD1A6A7D86A5215E8699D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2107C14B663358928DC4E6F0 /* Foundation.framework in Frameworks */,
+				8DB1ADA693BC88C49D059382 /* BUKDynamicPopView.framework in Frameworks */,
+				9D348EF5378EA553A94F3E5D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9DBC6AB9E3DCAD65E7CB466 /* Frameworks */ = {
+		519D0340FBE699369F72983B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9DBFC5C1DA27F5FA5BD32E4 /* Foundation.framework in Frameworks */,
+				AAB6350F05F9A14F27C07430 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E19DB3531B6916455EC312A0 /* Frameworks */ = {
+		A9A30F6663FCB4AC47EA7629 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90FDD439D5E33EA4AED24B43 /* Foundation.framework in Frameworks */,
+				AB20B098867165C7F2C023B6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E4F81C66F6F1A7147E5DA76 /* Pods-BUKPickerView_Tests */ = {
+		06C7051419D92411DDE9EE27 /* BUKDynamicPopView */ = {
 			isa = PBXGroup;
 			children = (
-				2A067819C36F41C345757EEB /* Info.plist */,
-				946B7B363070A5D56CE97073 /* Pods-BUKPickerView_Tests.modulemap */,
-				1B05AA9FCEB3DA4FCC8CEF91 /* Pods-BUKPickerView_Tests-acknowledgements.markdown */,
-				9812A8525DA74EF99066A99A /* Pods-BUKPickerView_Tests-acknowledgements.plist */,
-				9CD044291AE1F7781B343BCF /* Pods-BUKPickerView_Tests-dummy.m */,
-				9790E72404EC9AF2286DBB50 /* Pods-BUKPickerView_Tests-environment.h */,
-				4AC1577292F6B85D7BB49723 /* Pods-BUKPickerView_Tests-frameworks.sh */,
-				D63D9D93F118AFCDE63F69A4 /* Pods-BUKPickerView_Tests-resources.sh */,
-				D79D8EF857A058FE524E32E2 /* Pods-BUKPickerView_Tests-umbrella.h */,
-				8E6C05E99D236475FC600AC7 /* Pods-BUKPickerView_Tests.debug.xcconfig */,
-				956C08D3E054FB1C394EFA97 /* Pods-BUKPickerView_Tests.release.xcconfig */,
-			);
-			name = "Pods-BUKPickerView_Tests";
-			path = "Target Support Files/Pods-BUKPickerView_Tests";
-			sourceTree = "<group>";
-		};
-		1451B56CD5A87B8683E34DAF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E0CDBA7C1C9B310CE5AE5191 /* Info.plist */,
-				77FF5A08144F13AC166F39C8 /* Info.plist */,
-				F919FFD78F0E6EC12575B5F7 /* Pods-BUKPickerView_Example-BUKPickerView.modulemap */,
-				8C269463573B15FD4072943F /* Pods-BUKPickerView_Example-BUKPickerView.xcconfig */,
-				335FBFCE3731772D4160B3FC /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */,
-				6B664A2F0F12B5975320DEA1 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */,
-				DB24BFE6058DBF85EB082771 /* Pods-BUKPickerView_Example-BUKPickerView-prefix.pch */,
-				F6D83867E59876C39CFD7472 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */,
-				0624DFEFE9BA397460519E4E /* Pods-BUKPickerView_Tests-BUKPickerView.modulemap */,
-				3CC6858E55841141175C8890 /* Pods-BUKPickerView_Tests-BUKPickerView.xcconfig */,
-				26CC9DDC8A66EFE64842B2E4 /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */,
-				9A219443FFAC6E428545CC7B /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */,
-				4877CCF582E8B5E64CA640EF /* Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch */,
-				E848BC0A72D639D31EBF2329 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-BUKPickerView_Example-BUKPickerView";
-			sourceTree = "<group>";
-		};
-		24AFA3A762F0BBF6361A1D6A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				597356B036C0CFAD804E4CA7 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		6F94E8DD464F3E3C10930A1A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				74CD5E22C2032E92197042C5 /* BUKPickerView.h */,
-				BE5EF8A7D04A9024B130A505 /* BUKPickerView.m */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		8FA9B79619020680381D40B5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8423EB7814893D9C25B574A4 /* BUKDynamicPopView.framework */,
-				122E6127182862C68B33601E /* BUKDynamicPopView.framework */,
-				6A755A1165DDBBF62902BFCA /* BUKPickerView.framework */,
-				8B31454FEB8AC7056D58996B /* BUKPickerView.framework */,
-				A985CA2CED082821CFB8E3CE /* Pods_BUKPickerView_Example.framework */,
-				132A7BC668CFA0032B12F746 /* Pods_BUKPickerView_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9DBB8DB25356DB9C7235A276 = {
-			isa = PBXGroup;
-			children = (
-				99C4E9170B69337A3CC26D3A /* Podfile */,
-				E6A282274197D44C950BA73E /* Development Pods */,
-				B9CCA8E44D5D87B38DCB57E2 /* Frameworks */,
-				A54C1C80F09859CAD02606DC /* Pods */,
-				8FA9B79619020680381D40B5 /* Products */,
-				ACDF171AA012D671E5077C02 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		9F6BE7E778C84003698DDEDE /* BUKPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				6F94E8DD464F3E3C10930A1A /* Pod */,
-				1451B56CD5A87B8683E34DAF /* Support Files */,
-			);
-			name = BUKPickerView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		A54C1C80F09859CAD02606DC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C831D4B43884F9D41DFC2D27 /* BUKDynamicPopView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		ACDF171AA012D671E5077C02 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA6DD7463A8DC3DEDEDC960D /* Pods-BUKPickerView_Example */,
-				0E4F81C66F6F1A7147E5DA76 /* Pods-BUKPickerView_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B9CCA8E44D5D87B38DCB57E2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2C2FFA185368ECEBA560F15D /* BUKDynamicPopView.framework */,
-				24AFA3A762F0BBF6361A1D6A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C831D4B43884F9D41DFC2D27 /* BUKDynamicPopView */ = {
-			isa = PBXGroup;
-			children = (
-				E1A6F9637E4610B6EDE02BA0 /* BUKDynamicAnimationStyle.h */,
-				4C6C8586DEA3DFD06062918F /* BUKDynamicBehavior.h */,
-				4588DDB7117D4BBDBDD33D67 /* BUKDynamicPopView.h */,
-				AE2AD30C96BDA7E8D2DFDC8F /* BUKDynamicPopViewDelegate.h */,
-				42DD84238646C5CAE340AB9A /* BUKGravityCollisionBehavior.h */,
-				F096FE9A67C1E723B34E3E38 /* BUKGravityCollisionBehavior.m */,
-				EF87D9CB20F075410CB45C0C /* BUKUIViewAnimationBehavior.h */,
-				D353B8E0C841B40C47C0639E /* BUKUIViewAnimationBehavior.m */,
-				B5E57C4A0F6B6DB0E104C556 /* BUKXOrYMoveAnimationStyle.h */,
-				32CEFF886AA388E72A7FA40A /* BUKXOrYMoveAnimationStyle.m */,
-				E0E0623EBE6EA67C5D90A89B /* UIView+BUKDynamicPopView.h */,
-				BAFDB430AE734F31120E233C /* UIView+BUKDynamicPopView.m */,
-				D44921EA83D18B8E1447ACD7 /* Support Files */,
+				DB06AEDCC0FA62DD2964284E /* BUKDynamicAnimationStyle.h */,
+				A0981FA31EFCB3EF0B96AF95 /* BUKDynamicBehavior.h */,
+				BF95E2C1277C8EE8C9D581F7 /* BUKDynamicPopView.h */,
+				5C57F3FAB74825BAF883467A /* BUKDynamicPopViewDelegate.h */,
+				A2F47581801A8B4194BB43F1 /* BUKGravityCollisionBehavior.h */,
+				3F269C696E9849E2A0158A44 /* BUKGravityCollisionBehavior.m */,
+				7182A063CDD2500C89DE6D42 /* BUKUIViewAnimationBehavior.h */,
+				2832EAE7E30A09064173CFCA /* BUKUIViewAnimationBehavior.m */,
+				414FDE1BD8CB8FF3EF668E7F /* BUKXOrYMoveAnimationStyle.h */,
+				D2D78C0629184BDA14D4817F /* BUKXOrYMoveAnimationStyle.m */,
+				FD5BC79331982A7EB9D99C7F /* UIView+BUKDynamicPopView.h */,
+				1902458E24B00A883A3DE9F1 /* UIView+BUKDynamicPopView.m */,
+				3663E905202F97806A074608 /* Support Files */,
 			);
 			path = BUKDynamicPopView;
 			sourceTree = "<group>";
 		};
-		D44921EA83D18B8E1447ACD7 /* Support Files */ = {
+		2C695257011091BC3096EA92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4737C712B9C2E0F56C02B104 /* Info.plist */,
-				9D34E4E3C9E1234291C8F9E2 /* Info.plist */,
-				5C53EC9C190DD7C9A8EBF322 /* Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap */,
-				5C03CB39F1A1EA32FCEA689D /* Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig */,
-				46F5CD626FD4C1BC504FF35D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */,
-				3076A2648E8250A251DD6D5A /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */,
-				B443A01FBB0F9E2FA2F689D0 /* Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch */,
-				C18D1DE060C91EC52227D914 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */,
-				32DFA6D994DD111207F186E2 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap */,
-				7777A67CCE3BB613D6FD6817 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig */,
-				A008E7FD12D0D67B97DDD1A9 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */,
-				13A7EE67FDE0236C91779492 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */,
-				D36B1CA8A15F8A654D9AF6F2 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch */,
-				6D3F75C62984CB96AE503D66 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */,
+				194593C75CBE3F4282B2C969 /* BUKDynamicPopView.framework */,
+				A2E8B71C5ED00448435FBE5C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3663E905202F97806A074608 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC7AA9F4C267FE56015E5B7D /* Info.plist */,
+				7CF52DA19E1368D05C94E6BE /* Info.plist */,
+				81676126B11EA2C8D8CC5BE8 /* Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap */,
+				0EF70EEB6D83276B60E22E38 /* Pods-BUKPickerView_Example-BUKDynamicPopView.xcconfig */,
+				0597A43F7158D0499C5E483D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */,
+				E60A4966D65BDBF7470925D1 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m */,
+				D799D2AFC09E5A86BE9F0BD5 /* Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch */,
+				C1F9BDC840100A8582AE5DB3 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h */,
+				39123513F442C62505E2C7A6 /* Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap */,
+				3B0F8A93745FAA838BCF547D /* Pods-BUKPickerView_Tests-BUKDynamicPopView.xcconfig */,
+				DABE848A4F40A7C059B3B143 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */,
+				2E2C2E04338BB292DD247BDC /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m */,
+				9BDDDCAED97BC3D9EE918FB3 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch */,
+				0B0D41FECA94052E369EBCED /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView";
 			sourceTree = "<group>";
 		};
-		E6A282274197D44C950BA73E /* Development Pods */ = {
+		67303B63FE0F014DCD7DF4B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F6BE7E778C84003698DDEDE /* BUKPickerView */,
+				1F818FC9EFDE47DCF8FFB342 /* BUKDynamicPopView.framework */,
+				E22FC2596617CFB51D894304 /* BUKDynamicPopView.framework */,
+				E3D86A315B47A4809818692D /* BUKPickerView.framework */,
+				AB00B32678A6B3C3CECE83BC /* BUKPickerView.framework */,
+				E2E00701D65DC621B01B0578 /* Pods_BUKPickerView_Example.framework */,
+				8320A37CF51631299FA261B8 /* Pods_BUKPickerView_Tests.framework */,
 			);
-			name = "Development Pods";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		EA6DD7463A8DC3DEDEDC960D /* Pods-BUKPickerView_Example */ = {
+		74FAD83F6DC7E9ABD1400B74 /* Pods-BUKPickerView_Example */ = {
 			isa = PBXGroup;
 			children = (
-				C57CD75198676990FB593C35 /* Info.plist */,
-				820137404328829C9B993409 /* Pods-BUKPickerView_Example.modulemap */,
-				3A44C882303CBE0B4F78BD83 /* Pods-BUKPickerView_Example-acknowledgements.markdown */,
-				F402EE5468F38C8E8D1B89B0 /* Pods-BUKPickerView_Example-acknowledgements.plist */,
-				C63DF549E95A0D6BDA177A69 /* Pods-BUKPickerView_Example-dummy.m */,
-				B163EAA644143F0CE5971287 /* Pods-BUKPickerView_Example-environment.h */,
-				7FB1B492D74E57494173A7DB /* Pods-BUKPickerView_Example-frameworks.sh */,
-				ACB8871D0BF9E892660AEC27 /* Pods-BUKPickerView_Example-resources.sh */,
-				E84B9E132E8118B046182141 /* Pods-BUKPickerView_Example-umbrella.h */,
-				862FBFC066844F6ABB173F98 /* Pods-BUKPickerView_Example.debug.xcconfig */,
-				1C24EC3A5C11659B901125AD /* Pods-BUKPickerView_Example.release.xcconfig */,
+				7B2963D7D6BFFADC54CC3BA0 /* Info.plist */,
+				7CD37094FEC935696315F368 /* Pods-BUKPickerView_Example.modulemap */,
+				0ABA4A0C7FCE4792D969F4F4 /* Pods-BUKPickerView_Example-acknowledgements.markdown */,
+				A2BD46E9E991F96E9BC2D098 /* Pods-BUKPickerView_Example-acknowledgements.plist */,
+				CF5B356D40B03DCC64FBD6B7 /* Pods-BUKPickerView_Example-dummy.m */,
+				B0DF0DE86C9BA0EFFD31B379 /* Pods-BUKPickerView_Example-environment.h */,
+				75480DEE06B295D7EB256D05 /* Pods-BUKPickerView_Example-frameworks.sh */,
+				6D8E300B3D95193721ADA6C2 /* Pods-BUKPickerView_Example-resources.sh */,
+				C0AD948DD85A1D27A0660F4B /* Pods-BUKPickerView_Example-umbrella.h */,
+				BFE327C45DBB75E3188FE885 /* Pods-BUKPickerView_Example.debug.xcconfig */,
+				7D082F23F3AE816A5EC53850 /* Pods-BUKPickerView_Example.release.xcconfig */,
 			);
 			name = "Pods-BUKPickerView_Example";
 			path = "Target Support Files/Pods-BUKPickerView_Example";
 			sourceTree = "<group>";
 		};
+		7AED3B0B0D38161B9EFBF70A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3540875163278A60C6230383 /* BUKPickerTitleView.h */,
+				8B9BAE8D0D904344C3AB00C2 /* BUKPickerTitleView.m */,
+				020795550BE9D863E477BD4E /* BUKPickerView.h */,
+				C713DD8CAD2D2BCDE1F3127A /* BUKPickerView.m */,
+				894556D4DC6F7543494AF0BC /* BUKPickerViewDefaultCell.h */,
+				2E7226C77D59131C999D3A41 /* BUKPickerViewDefaultCell.m */,
+				190BFF22141287CCE5F10E18 /* BUKPickerViewModel.h */,
+				72502F2FD28467883BF044FB /* BUKPickerViewModel.m */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		818EC027C44C1BD7BDD9D1DB /* BUKPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				7AED3B0B0D38161B9EFBF70A /* Pod */,
+				BFC5BFE7339D96B53D6EC8D0 /* Support Files */,
+			);
+			name = BUKPickerView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		8A8E8532140DF3FF39C53227 = {
+			isa = PBXGroup;
+			children = (
+				5639E3FF0D4BBB9DE9C3158A /* Podfile */,
+				9406646F8177442A50CA0604 /* Development Pods */,
+				2C695257011091BC3096EA92 /* Frameworks */,
+				DA243671C2D7CDF1929FFE8B /* Pods */,
+				67303B63FE0F014DCD7DF4B1 /* Products */,
+				FF60C594390B262FA7949AEF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9406646F8177442A50CA0604 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				818EC027C44C1BD7BDD9D1DB /* BUKPickerView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A2E8B71C5ED00448435FBE5C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8CBD7FFA5CBCCC248C63AFB6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BF7E6EFD27F05B568018AA4E /* Pods-BUKPickerView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0F62689C09F6397056308E51 /* Info.plist */,
+				5A38B5E0D18A2AE6718F2184 /* Pods-BUKPickerView_Tests.modulemap */,
+				DD393A724E0416CC549FB1C1 /* Pods-BUKPickerView_Tests-acknowledgements.markdown */,
+				C08A2FF03A71408A0E7FEA7E /* Pods-BUKPickerView_Tests-acknowledgements.plist */,
+				2600724CB054E23E7DCAAFA8 /* Pods-BUKPickerView_Tests-dummy.m */,
+				D33A9B8ECCB284C11E3D77C0 /* Pods-BUKPickerView_Tests-environment.h */,
+				B7CD1B14447C9113329CC45D /* Pods-BUKPickerView_Tests-frameworks.sh */,
+				4D0B58EE9826EE75DD1F9BDF /* Pods-BUKPickerView_Tests-resources.sh */,
+				9897232F9D69CE3D4E665FF4 /* Pods-BUKPickerView_Tests-umbrella.h */,
+				63C675F180A616E7B09451E2 /* Pods-BUKPickerView_Tests.debug.xcconfig */,
+				1819BD4311C8EBCF22FFD6DB /* Pods-BUKPickerView_Tests.release.xcconfig */,
+			);
+			name = "Pods-BUKPickerView_Tests";
+			path = "Target Support Files/Pods-BUKPickerView_Tests";
+			sourceTree = "<group>";
+		};
+		BFC5BFE7339D96B53D6EC8D0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C7C722302C4797825655E0C /* Info.plist */,
+				9351C09365579CDF4BC9E918 /* Info.plist */,
+				DA537AEE53E33B46CEEA641C /* Pods-BUKPickerView_Example-BUKPickerView.modulemap */,
+				4ECF78B317468335DAFF68A5 /* Pods-BUKPickerView_Example-BUKPickerView.xcconfig */,
+				08AF122CC114F244E12FB865 /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */,
+				CDA1114998A6051533121FB3 /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m */,
+				02F95974CBCCA4BEA7A54E66 /* Pods-BUKPickerView_Example-BUKPickerView-prefix.pch */,
+				32BF6C0A8404EC4F3ACD27F0 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h */,
+				ED498B098F4E1D162B9F9C25 /* Pods-BUKPickerView_Tests-BUKPickerView.modulemap */,
+				9823C4FE4ABDC5D0721756B7 /* Pods-BUKPickerView_Tests-BUKPickerView.xcconfig */,
+				E4CC98175B2AA963083BC67C /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */,
+				EDA9E35C14AE497BD6061562 /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m */,
+				9578358C00FE72C709A0278B /* Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch */,
+				250670F854E28D24B0CD25D1 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-BUKPickerView_Example-BUKPickerView";
+			sourceTree = "<group>";
+		};
+		DA243671C2D7CDF1929FFE8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06C7051419D92411DDE9EE27 /* BUKDynamicPopView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF60C594390B262FA7949AEF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				74FAD83F6DC7E9ABD1400B74 /* Pods-BUKPickerView_Example */,
+				BF7E6EFD27F05B568018AA4E /* Pods-BUKPickerView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2B7CA6995877297C9D861567 /* Headers */ = {
+		0602AF9CE1EE7708915889B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA403E5BE7BF68CCC553250 /* BUKDynamicAnimationStyle.h in Headers */,
-				7528CA0819C90225F07048F5 /* BUKDynamicBehavior.h in Headers */,
-				328FA67D0AEA8D0AC53F037C /* BUKDynamicPopView.h in Headers */,
-				70C15D97F57DCBB6445AE289 /* BUKDynamicPopViewDelegate.h in Headers */,
-				1CB8562CE3CC161AF6B63E13 /* BUKGravityCollisionBehavior.h in Headers */,
-				BED3694AE586BC2ACD0A4A7B /* BUKUIViewAnimationBehavior.h in Headers */,
-				5DE45349B7CB13F27B9AB5AC /* BUKXOrYMoveAnimationStyle.h in Headers */,
-				A3A2AA348F7128B36551809D /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h in Headers */,
-				EAF8B6D55293D5F9694580A6 /* UIView+BUKDynamicPopView.h in Headers */,
+				5206B72E2F6A69C260B3D231 /* BUKPickerTitleView.h in Headers */,
+				FB671FDDE88740304AE64782 /* BUKPickerView.h in Headers */,
+				34B176B595F3673C470B45B4 /* BUKPickerViewDefaultCell.h in Headers */,
+				9E8C8FDE9E0F589D2BDE80A2 /* BUKPickerViewModel.h in Headers */,
+				11285734095C843CB6AC8D0F /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		526DD452D6F8E708AC038035 /* Headers */ = {
+		79CF5FB0A882E2D2C8FFE68E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F02DEED33E8A700C87CDFC /* BUKPickerView.h in Headers */,
-				4CCA15C4768747E16D81EDFA /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h in Headers */,
+				3DC744A50DA74A3F149D2A4D /* BUKPickerTitleView.h in Headers */,
+				A99AC09FAC9A232E2C1B20EA /* BUKPickerView.h in Headers */,
+				CD8F92257AE13B0D981DC67A /* BUKPickerViewDefaultCell.h in Headers */,
+				286EC6E1221D551146FFF168 /* BUKPickerViewModel.h in Headers */,
+				AF5053A419FB38A1406BEB92 /* Pods-BUKPickerView_Example-BUKPickerView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57E6A34EFEC468A1C6C5A21F /* Headers */ = {
+		92FD12B38FD493F2C49541EA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57BB4989F7E5FCE2FD02DCDB /* BUKDynamicAnimationStyle.h in Headers */,
-				0C41C399F2D1FA272321100D /* BUKDynamicBehavior.h in Headers */,
-				0A949C092A166D321118C671 /* BUKDynamicPopView.h in Headers */,
-				1B46F52EC318EAAF6C63C5A0 /* BUKDynamicPopViewDelegate.h in Headers */,
-				28F7C88FC340043DAFC48423 /* BUKGravityCollisionBehavior.h in Headers */,
-				9BA88ECE0A112B1229F60882 /* BUKUIViewAnimationBehavior.h in Headers */,
-				B551541A64926469FE3F9E61 /* BUKXOrYMoveAnimationStyle.h in Headers */,
-				90300ACA399FC0F7C36234A8 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h in Headers */,
-				773AFA91197785D530DCC3C2 /* UIView+BUKDynamicPopView.h in Headers */,
+				3F618F4D05FD08D609A57EF7 /* Pods-BUKPickerView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		851A4BD0A13641C0AA486DF0 /* Headers */ = {
+		9C74F6E70193096F6217B687 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E3BAB181CD8DB2E3C87BE2 /* BUKPickerView.h in Headers */,
-				075F1E515FE080209DBFFDF7 /* Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h in Headers */,
+				7972EF7D0947BDAF0E446253 /* BUKDynamicAnimationStyle.h in Headers */,
+				34B7D388DB3DB0601A462175 /* BUKDynamicBehavior.h in Headers */,
+				EDFD88701AD5E4D14DA982B7 /* BUKDynamicPopView.h in Headers */,
+				5BB8F635D1F08A467432E9D6 /* BUKDynamicPopViewDelegate.h in Headers */,
+				390DD0E6226D2BC270B9751C /* BUKGravityCollisionBehavior.h in Headers */,
+				87EEDEA83D59B1137E5D4794 /* BUKUIViewAnimationBehavior.h in Headers */,
+				E3DA3D4FAB50D3D6C0594B97 /* BUKXOrYMoveAnimationStyle.h in Headers */,
+				FC9EAF4D400595322E2F1FE8 /* Pods-BUKPickerView_Example-BUKDynamicPopView-umbrella.h in Headers */,
+				DB9678B4896A548FC1BCCBA2 /* UIView+BUKDynamicPopView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		915413798935911F37BC348E /* Headers */ = {
+		C32CA7163486238BA75C0492 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E107A6B8EEF0F268AA7F15 /* Pods-BUKPickerView_Tests-umbrella.h in Headers */,
+				469A20E6D7D49AF62331E00B /* BUKDynamicAnimationStyle.h in Headers */,
+				7A1E44CDC63E8963BEE8BE7D /* BUKDynamicBehavior.h in Headers */,
+				9F24509C68608D6A5F25C779 /* BUKDynamicPopView.h in Headers */,
+				19208A311A70E1301102E941 /* BUKDynamicPopViewDelegate.h in Headers */,
+				92F17E1E8F5CAD9342004E42 /* BUKGravityCollisionBehavior.h in Headers */,
+				F4C5C97AE9DEC2A4E8E59199 /* BUKUIViewAnimationBehavior.h in Headers */,
+				CC1CE7D45E1FDECA073729DF /* BUKXOrYMoveAnimationStyle.h in Headers */,
+				31C6C1989AF124297CE94C77 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-umbrella.h in Headers */,
+				11B193BF16C9B0ED5A5D3866 /* UIView+BUKDynamicPopView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F020F551CFEA6F9CDF2D7A1C /* Headers */ = {
+		F0BE2A72F04B0233CAD319D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D94E4DC0FB2D7353AC96726C /* Pods-BUKPickerView_Example-umbrella.h in Headers */,
+				0DC0E25DBB8503B92FB8EF6C /* Pods-BUKPickerView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0058DB252C284B0595149407 /* Pods-BUKPickerView_Example-BUKDynamicPopView */ = {
+		1C7E139F476737097D6128A9 /* Pods-BUKPickerView_Example-BUKPickerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F649F9920D5BEDFD1B0469D0 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKDynamicPopView" */;
+			buildConfigurationList = AF59F1D6F4D7231BEBD58F23 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKPickerView" */;
 			buildPhases = (
-				BC6AC95EC666FB7A0D833C4F /* Sources */,
-				8EE8F6CD61AFCF2631AFF733 /* Frameworks */,
-				2B7CA6995877297C9D861567 /* Headers */,
+				650381A41E9AB2EC85DF7EA3 /* Sources */,
+				090349D1788AC331DCC9E9CA /* Frameworks */,
+				79CF5FB0A882E2D2C8FFE68E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14756AB2495BD2A3DCFCC488 /* PBXTargetDependency */,
+			);
+			name = "Pods-BUKPickerView_Example-BUKPickerView";
+			productName = "Pods-BUKPickerView_Example-BUKPickerView";
+			productReference = E3D86A315B47A4809818692D /* BUKPickerView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1DCFD11031ECA5AA0E433825 /* Pods-BUKPickerView_Tests-BUKPickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E38DA62834473AE894D647B7 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKPickerView" */;
+			buildPhases = (
+				860F6E8A5C9D26EB03DEAB3C /* Sources */,
+				4FFD1A6A7D86A5215E8699D1 /* Frameworks */,
+				0602AF9CE1EE7708915889B7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41406D9ADBC5D339369331EA /* PBXTargetDependency */,
+			);
+			name = "Pods-BUKPickerView_Tests-BUKPickerView";
+			productName = "Pods-BUKPickerView_Tests-BUKPickerView";
+			productReference = AB00B32678A6B3C3CECE83BC /* BUKPickerView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3172D313FBBCA4AB1BF78512 /* Pods-BUKPickerView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A93FF3C668FA73873F20DD26 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests" */;
+			buildPhases = (
+				2861A9E1046A36D422A3222A /* Sources */,
+				41B6BCD756800BD1310BC25D /* Frameworks */,
+				92FD12B38FD493F2C49541EA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A35DB1546E8E50C351C6A689 /* PBXTargetDependency */,
+				809013D96B465DA4E4840FF0 /* PBXTargetDependency */,
+			);
+			name = "Pods-BUKPickerView_Tests";
+			productName = "Pods-BUKPickerView_Tests";
+			productReference = 8320A37CF51631299FA261B8 /* Pods_BUKPickerView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9CE4F06CE2A04C3A29655F61 /* Pods-BUKPickerView_Example-BUKDynamicPopView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C308F749CED37A859CD6E34 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKDynamicPopView" */;
+			buildPhases = (
+				361CBBE64AFE20974A32994B /* Sources */,
+				A9A30F6663FCB4AC47EA7629 /* Frameworks */,
+				9C74F6E70193096F6217B687 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -506,53 +591,16 @@
 			);
 			name = "Pods-BUKPickerView_Example-BUKDynamicPopView";
 			productName = "Pods-BUKPickerView_Example-BUKDynamicPopView";
-			productReference = 8423EB7814893D9C25B574A4 /* BUKDynamicPopView.framework */;
+			productReference = 1F818FC9EFDE47DCF8FFB342 /* BUKDynamicPopView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		41C801AF7DF2E4B42866F430 /* Pods-BUKPickerView_Tests */ = {
+		ADDD2688868D19F56A9B9FFA /* Pods-BUKPickerView_Tests-BUKDynamicPopView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0329F717B6CFC28BFD8A33D /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests" */;
+			buildConfigurationList = 0C8D2D6D4D049287FE26FF8E /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKDynamicPopView" */;
 			buildPhases = (
-				B7C8D289DF6B62FC3F28DEFE /* Sources */,
-				E19DB3531B6916455EC312A0 /* Frameworks */,
-				915413798935911F37BC348E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				22DDFA0264CB669102115381 /* PBXTargetDependency */,
-				3C8B1AF63A13F5C4EDECD417 /* PBXTargetDependency */,
-			);
-			name = "Pods-BUKPickerView_Tests";
-			productName = "Pods-BUKPickerView_Tests";
-			productReference = 132A7BC668CFA0032B12F746 /* Pods_BUKPickerView_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4A4044F20B38DBA4CAA0BF94 /* Pods-BUKPickerView_Tests-BUKPickerView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE058CD1B88524F338014873 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKPickerView" */;
-			buildPhases = (
-				DF3BBDA5B0CF20950C4C76C8 /* Sources */,
-				3CA9AD89A54DC7D9281F91AE /* Frameworks */,
-				851A4BD0A13641C0AA486DF0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA0A542915E304F78852077F /* PBXTargetDependency */,
-			);
-			name = "Pods-BUKPickerView_Tests-BUKPickerView";
-			productName = "Pods-BUKPickerView_Tests-BUKPickerView";
-			productReference = 8B31454FEB8AC7056D58996B /* BUKPickerView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4E5E68A71A7391EF14A0E97B /* Pods-BUKPickerView_Tests-BUKDynamicPopView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 173E81B47F0C954EE6B6A90F /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKDynamicPopView" */;
-			buildPhases = (
-				8C4CD27EEFE3376AD0531F3E /* Sources */,
-				9EAC57CD8DB5477333A757B2 /* Frameworks */,
-				57E6A34EFEC468A1C6C5A21F /* Headers */,
+				0C7EB8D2323C2780E283E3C5 /* Sources */,
+				4CCEC98FC077A020B62DC5E4 /* Frameworks */,
+				C32CA7163486238BA75C0492 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -560,346 +608,168 @@
 			);
 			name = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
 			productName = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
-			productReference = 122E6127182862C68B33601E /* BUKDynamicPopView.framework */;
+			productReference = E22FC2596617CFB51D894304 /* BUKDynamicPopView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		684ECA189B7D53DC0846F66A /* Pods-BUKPickerView_Example */ = {
+		EDBCF634936132EA7BAEEA10 /* Pods-BUKPickerView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1378C1AD0A33A941436C189 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example" */;
+			buildConfigurationList = 8BC3C62DAEE284CE37856CC1 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example" */;
 			buildPhases = (
-				4836F365F0A9A6E8B33DC01B /* Sources */,
-				B9DBC6AB9E3DCAD65E7CB466 /* Frameworks */,
-				F020F551CFEA6F9CDF2D7A1C /* Headers */,
+				CDDE9A9687ECFF7A4446E567 /* Sources */,
+				519D0340FBE699369F72983B /* Frameworks */,
+				F0BE2A72F04B0233CAD319D6 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C1307EFFFEBBED59761D1443 /* PBXTargetDependency */,
-				2AD135D35204B48B9B001250 /* PBXTargetDependency */,
+				07D9F795C6328F8A23191C40 /* PBXTargetDependency */,
+				654C2068D5D055224CE8F5D4 /* PBXTargetDependency */,
 			);
 			name = "Pods-BUKPickerView_Example";
 			productName = "Pods-BUKPickerView_Example";
-			productReference = A985CA2CED082821CFB8E3CE /* Pods_BUKPickerView_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7A86E92621BD3327008BA755 /* Pods-BUKPickerView_Example-BUKPickerView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 173F4A908F8EE5F4E67DEBD3 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKPickerView" */;
-			buildPhases = (
-				139696CBDB323241A5B0A53A /* Sources */,
-				6D7ACAAA168F743CF4250E86 /* Frameworks */,
-				526DD452D6F8E708AC038035 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5F673CBF7FD032B8D2E96D0B /* PBXTargetDependency */,
-			);
-			name = "Pods-BUKPickerView_Example-BUKPickerView";
-			productName = "Pods-BUKPickerView_Example-BUKPickerView";
-			productReference = 6A755A1165DDBBF62902BFCA /* BUKPickerView.framework */;
+			productReference = E2E00701D65DC621B01B0578 /* Pods_BUKPickerView_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		05DC72AEDD0A51893056FE39 /* Project object */ = {
+		C171C10917F613A71EB6BA99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 330B1D856067C47119C58E64 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 61381A065A8A2D09059A3590 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9DBB8DB25356DB9C7235A276;
-			productRefGroup = 8FA9B79619020680381D40B5 /* Products */;
+			mainGroup = 8A8E8532140DF3FF39C53227;
+			productRefGroup = 67303B63FE0F014DCD7DF4B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				684ECA189B7D53DC0846F66A /* Pods-BUKPickerView_Example */,
-				0058DB252C284B0595149407 /* Pods-BUKPickerView_Example-BUKDynamicPopView */,
-				7A86E92621BD3327008BA755 /* Pods-BUKPickerView_Example-BUKPickerView */,
-				41C801AF7DF2E4B42866F430 /* Pods-BUKPickerView_Tests */,
-				4E5E68A71A7391EF14A0E97B /* Pods-BUKPickerView_Tests-BUKDynamicPopView */,
-				4A4044F20B38DBA4CAA0BF94 /* Pods-BUKPickerView_Tests-BUKPickerView */,
+				EDBCF634936132EA7BAEEA10 /* Pods-BUKPickerView_Example */,
+				9CE4F06CE2A04C3A29655F61 /* Pods-BUKPickerView_Example-BUKDynamicPopView */,
+				1C7E139F476737097D6128A9 /* Pods-BUKPickerView_Example-BUKPickerView */,
+				3172D313FBBCA4AB1BF78512 /* Pods-BUKPickerView_Tests */,
+				ADDD2688868D19F56A9B9FFA /* Pods-BUKPickerView_Tests-BUKDynamicPopView */,
+				1DCFD11031ECA5AA0E433825 /* Pods-BUKPickerView_Tests-BUKPickerView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		139696CBDB323241A5B0A53A /* Sources */ = {
+		0C7EB8D2323C2780E283E3C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1895A35E0D21979D0AAF957 /* BUKPickerView.m in Sources */,
-				207311A3360B745D074F56AE /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m in Sources */,
+				1BC9A769D7D34F7DD418A83F /* BUKGravityCollisionBehavior.m in Sources */,
+				A335F033F6FB855E4543305F /* BUKUIViewAnimationBehavior.m in Sources */,
+				9404977364FB505BE7F06C3F /* BUKXOrYMoveAnimationStyle.m in Sources */,
+				32F09B34E1D78DA830DFBCFD /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m in Sources */,
+				E581E952AA3B24532EBD1F98 /* UIView+BUKDynamicPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4836F365F0A9A6E8B33DC01B /* Sources */ = {
+		2861A9E1046A36D422A3222A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F623283AC5C54DA0D1A6ADAA /* Pods-BUKPickerView_Example-dummy.m in Sources */,
+				C36155DF2B36E4FBA29D4BD4 /* Pods-BUKPickerView_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C4CD27EEFE3376AD0531F3E /* Sources */ = {
+		361CBBE64AFE20974A32994B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AEE50B99AAD5F1DCD04486A /* BUKGravityCollisionBehavior.m in Sources */,
-				71136A4A8E2CE5FAC3A68612 /* BUKUIViewAnimationBehavior.m in Sources */,
-				3FACFF04D608F875A9DDA2D3 /* BUKXOrYMoveAnimationStyle.m in Sources */,
-				C138AAD9B82C1E414936DCE3 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-dummy.m in Sources */,
-				7FE08E766A41CAE9630685D5 /* UIView+BUKDynamicPopView.m in Sources */,
+				1CC00C0EDCFFF8284582D85A /* BUKGravityCollisionBehavior.m in Sources */,
+				0023D76F4EF9BDD3AE0BEEDE /* BUKUIViewAnimationBehavior.m in Sources */,
+				A75F3CE79E721A347B7B3E35 /* BUKXOrYMoveAnimationStyle.m in Sources */,
+				3269F9DBE454622E6C49B310 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m in Sources */,
+				1CB44B06B165E2E0288F6565 /* UIView+BUKDynamicPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7C8D289DF6B62FC3F28DEFE /* Sources */ = {
+		650381A41E9AB2EC85DF7EA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A39B55BFF56EDEF88A6A58 /* Pods-BUKPickerView_Tests-dummy.m in Sources */,
+				826763025661E0C49BE10996 /* BUKPickerTitleView.m in Sources */,
+				C9F36B6ECF7378962396B271 /* BUKPickerView.m in Sources */,
+				C40AF4D1D38BAB285595D93B /* BUKPickerViewDefaultCell.m in Sources */,
+				4B9528DE304B04289951B063 /* BUKPickerViewModel.m in Sources */,
+				C22B1A348594179D989AE8DE /* Pods-BUKPickerView_Example-BUKPickerView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC6AC95EC666FB7A0D833C4F /* Sources */ = {
+		860F6E8A5C9D26EB03DEAB3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202601AB36A304CF13429B59 /* BUKGravityCollisionBehavior.m in Sources */,
-				DA2E1D7F984352D967A92F52 /* BUKUIViewAnimationBehavior.m in Sources */,
-				BF7DD50487F34030FCDEE556 /* BUKXOrYMoveAnimationStyle.m in Sources */,
-				559339C43FA8D3032AB90CA8 /* Pods-BUKPickerView_Example-BUKDynamicPopView-dummy.m in Sources */,
-				173A684DBFADDF8DB8F97000 /* UIView+BUKDynamicPopView.m in Sources */,
+				9DF55942EE34682C69D4B127 /* BUKPickerTitleView.m in Sources */,
+				31548CA84B4517D841C0F1EE /* BUKPickerView.m in Sources */,
+				06FF84D936B3EB2AA5E5A1D7 /* BUKPickerViewDefaultCell.m in Sources */,
+				9FB33E76AFFC8A52748CA44F /* BUKPickerViewModel.m in Sources */,
+				D2645508935C59247A139C5B /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF3BBDA5B0CF20950C4C76C8 /* Sources */ = {
+		CDDE9A9687ECFF7A4446E567 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFE0020F88990DBCA5B1B8F /* BUKPickerView.m in Sources */,
-				DEB1778BA4F2E9E9722F75A7 /* Pods-BUKPickerView_Tests-BUKPickerView-dummy.m in Sources */,
+				B950B84FB51627D985FD7DA6 /* Pods-BUKPickerView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22DDFA0264CB669102115381 /* PBXTargetDependency */ = {
+		07D9F795C6328F8A23191C40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BUKPickerView_Example-BUKDynamicPopView";
+			target = 9CE4F06CE2A04C3A29655F61 /* Pods-BUKPickerView_Example-BUKDynamicPopView */;
+			targetProxy = C3654D3A497D304EB7BFFF3D /* PBXContainerItemProxy */;
+		};
+		14756AB2495BD2A3DCFCC488 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BUKPickerView_Example-BUKDynamicPopView";
+			target = 9CE4F06CE2A04C3A29655F61 /* Pods-BUKPickerView_Example-BUKDynamicPopView */;
+			targetProxy = CB543E676C914B9A8BBE52BF /* PBXContainerItemProxy */;
+		};
+		41406D9ADBC5D339369331EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
-			target = 4E5E68A71A7391EF14A0E97B /* Pods-BUKPickerView_Tests-BUKDynamicPopView */;
-			targetProxy = 5E08673C8BC11636E2B73B1D /* PBXContainerItemProxy */;
+			target = ADDD2688868D19F56A9B9FFA /* Pods-BUKPickerView_Tests-BUKDynamicPopView */;
+			targetProxy = 0DDCCDBA300383F0A40614C5 /* PBXContainerItemProxy */;
 		};
-		2AD135D35204B48B9B001250 /* PBXTargetDependency */ = {
+		654C2068D5D055224CE8F5D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-BUKPickerView_Example-BUKPickerView";
-			target = 7A86E92621BD3327008BA755 /* Pods-BUKPickerView_Example-BUKPickerView */;
-			targetProxy = 587836E6395ED45441507120 /* PBXContainerItemProxy */;
+			target = 1C7E139F476737097D6128A9 /* Pods-BUKPickerView_Example-BUKPickerView */;
+			targetProxy = FB73F2FEFF2CF33EB0D29A66 /* PBXContainerItemProxy */;
 		};
-		3C8B1AF63A13F5C4EDECD417 /* PBXTargetDependency */ = {
+		809013D96B465DA4E4840FF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-BUKPickerView_Tests-BUKPickerView";
-			target = 4A4044F20B38DBA4CAA0BF94 /* Pods-BUKPickerView_Tests-BUKPickerView */;
-			targetProxy = D7AF738FC411EEC6DF57362A /* PBXContainerItemProxy */;
+			target = 1DCFD11031ECA5AA0E433825 /* Pods-BUKPickerView_Tests-BUKPickerView */;
+			targetProxy = 110D749180872E664519F6B9 /* PBXContainerItemProxy */;
 		};
-		5F673CBF7FD032B8D2E96D0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-BUKPickerView_Example-BUKDynamicPopView";
-			target = 0058DB252C284B0595149407 /* Pods-BUKPickerView_Example-BUKDynamicPopView */;
-			targetProxy = 88477F5096D4D2C80145B62F /* PBXContainerItemProxy */;
-		};
-		AA0A542915E304F78852077F /* PBXTargetDependency */ = {
+		A35DB1546E8E50C351C6A689 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-BUKPickerView_Tests-BUKDynamicPopView";
-			target = 4E5E68A71A7391EF14A0E97B /* Pods-BUKPickerView_Tests-BUKDynamicPopView */;
-			targetProxy = A0ABF93E99E6492B368EBD26 /* PBXContainerItemProxy */;
-		};
-		C1307EFFFEBBED59761D1443 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-BUKPickerView_Example-BUKDynamicPopView";
-			target = 0058DB252C284B0595149407 /* Pods-BUKPickerView_Example-BUKDynamicPopView */;
-			targetProxy = F47E5F22A0C406880817B3C7 /* PBXContainerItemProxy */;
+			target = ADDD2688868D19F56A9B9FFA /* Pods-BUKPickerView_Tests-BUKDynamicPopView */;
+			targetProxy = E88DD49A6927EED7BAE33991 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		027546B41F363F6C0D9890AB /* Release */ = {
+		3F453A226B4FC95ED812E69E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A008E7FD12D0D67B97DDD1A9 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BUKDynamicPopView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3C7BF21B92EC825B6CFD1700 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26CC9DDC8A66EFE64842B2E4 /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BUKPickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		46F293EEB15CE76FFBE49859 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C24EC3A5C11659B901125AD /* Pods-BUKPickerView_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example/Pods-BUKPickerView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_BUKPickerView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		565F3B13CF00CB02C3C04628 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A008E7FD12D0D67B97DDD1A9 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BUKDynamicPopView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		79EE537D4336D8FEBBE3141A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E6C05E99D236475FC600AC7 /* Pods-BUKPickerView_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Pods-BUKPickerView_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_BUKPickerView_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		98DA5830BB12D895C8B77CCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46F5CD626FD4C1BC504FF35D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BUKDynamicPopView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A3D6C4A1278D7FAA8F42F1CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 335FBFCE3731772D4160B3FC /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */;
+			baseConfigurationReference = 08AF122CC114F244E12FB865 /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -911,36 +781,9 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BUKPickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AF0251078FF717A4CF23A0C0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26CC9DDC8A66EFE64842B2E4 /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = BUKPickerView;
 				SDKROOT = iphoneos;
@@ -951,7 +794,7 @@
 			};
 			name = Release;
 		};
-		C2D6F4DDE3E078453B14B1AD /* Debug */ = {
+		46A7CD23720B0563A336EAFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -983,14 +826,319 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		DBA4B603946AE5CD59AEE381 /* Release */ = {
+		5301F243D746AC9C2D6F56CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFE327C45DBB75E3188FE885 /* Pods-BUKPickerView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example/Pods-BUKPickerView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_BUKPickerView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		53D4E39E0841F9A75817488C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1819BD4311C8EBCF22FFD6DB /* Pods-BUKPickerView_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Pods-BUKPickerView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_BUKPickerView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5989F0455B31489A98831014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DABE848A4F40A7C059B3B143 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BUKDynamicPopView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65E91C064961A604DF946AA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08AF122CC114F244E12FB865 /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BUKPickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B52C8988A3F7810FF19D69A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CC98175B2AA963083BC67C /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BUKPickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B76244E0E685F09FB63F73D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63C675F180A616E7B09451E2 /* Pods-BUKPickerView_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Pods-BUKPickerView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_BUKPickerView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97C0B66020F5AEF03FB9288A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0597A43F7158D0499C5E483D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BUKDynamicPopView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ADE4B607251D3EDD08495290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0597A43F7158D0499C5E483D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BUKDynamicPopView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8BB6BD15DD19CADF4582F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CC98175B2AA963083BC67C /* Pods-BUKPickerView_Tests-BUKPickerView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKPickerView/Pods-BUKPickerView_Tests-BUKPickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BUKPickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C2286098763D6EDBC7D6FB96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D082F23F3AE816A5EC53850 /* Pods-BUKPickerView_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example/Pods-BUKPickerView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_BUKPickerView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D60B384BCAABDEDF3A70ECBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DABE848A4F40A7C059B3B143 /* Pods-BUKPickerView_Tests-BUKDynamicPopView-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests-BUKDynamicPopView/Pods-BUKPickerView_Tests-BUKDynamicPopView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BUKDynamicPopView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E1D023F5AA8B3C16F8FBC173 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1017,192 +1165,80 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E18788CA8CBF4E7FBBBEF563 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 862FBFC066844F6ABB173F98 /* Pods-BUKPickerView_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example/Pods-BUKPickerView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_BUKPickerView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E9DEA1B0AAC2DB483821AA47 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 335FBFCE3731772D4160B3FC /* Pods-BUKPickerView_Example-BUKPickerView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKPickerView/Pods-BUKPickerView_Example-BUKPickerView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BUKPickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F3718B4DC35468734EA06A7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46F5CD626FD4C1BC504FF35D /* Pods-BUKPickerView_Example-BUKDynamicPopView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Example-BUKDynamicPopView/Pods-BUKPickerView_Example-BUKDynamicPopView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BUKDynamicPopView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FDB08DCFC1910FCA1017B61E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 956C08D3E054FB1C394EFA97 /* Pods-BUKPickerView_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-BUKPickerView_Tests/Pods-BUKPickerView_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_BUKPickerView_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		173E81B47F0C954EE6B6A90F /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKDynamicPopView" */ = {
+		0C8D2D6D4D049287FE26FF8E /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKDynamicPopView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				565F3B13CF00CB02C3C04628 /* Debug */,
-				027546B41F363F6C0D9890AB /* Release */,
+				5989F0455B31489A98831014 /* Debug */,
+				D60B384BCAABDEDF3A70ECBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		173F4A908F8EE5F4E67DEBD3 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKPickerView" */ = {
+		1C308F749CED37A859CD6E34 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKDynamicPopView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3D6C4A1278D7FAA8F42F1CC /* Debug */,
-				E9DEA1B0AAC2DB483821AA47 /* Release */,
+				ADE4B607251D3EDD08495290 /* Debug */,
+				97C0B66020F5AEF03FB9288A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		330B1D856067C47119C58E64 /* Build configuration list for PBXProject "Pods" */ = {
+		61381A065A8A2D09059A3590 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2D6F4DDE3E078453B14B1AD /* Debug */,
-				DBA4B603946AE5CD59AEE381 /* Release */,
+				46A7CD23720B0563A336EAFC /* Debug */,
+				E1D023F5AA8B3C16F8FBC173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1378C1AD0A33A941436C189 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example" */ = {
+		8BC3C62DAEE284CE37856CC1 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E18788CA8CBF4E7FBBBEF563 /* Debug */,
-				46F293EEB15CE76FFBE49859 /* Release */,
+				5301F243D746AC9C2D6F56CA /* Debug */,
+				C2286098763D6EDBC7D6FB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0329F717B6CFC28BFD8A33D /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests" */ = {
+		A93FF3C668FA73873F20DD26 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79EE537D4336D8FEBBE3141A /* Debug */,
-				FDB08DCFC1910FCA1017B61E /* Release */,
+				7B76244E0E685F09FB63F73D /* Debug */,
+				53D4E39E0841F9A75817488C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F649F9920D5BEDFD1B0469D0 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKDynamicPopView" */ = {
+		AF59F1D6F4D7231BEBD58F23 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Example-BUKPickerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98DA5830BB12D895C8B77CCB /* Debug */,
-				F3718B4DC35468734EA06A7D /* Release */,
+				65E91C064961A604DF946AA8 /* Debug */,
+				3F453A226B4FC95ED812E69E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE058CD1B88524F338014873 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKPickerView" */ = {
+		E38DA62834473AE894D647B7 /* Build configuration list for PBXNativeTarget "Pods-BUKPickerView_Tests-BUKPickerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C7BF21B92EC825B6CFD1700 /* Debug */,
-				AF0251078FF717A4CF23A0C0 /* Release */,
+				6B52C8988A3F7810FF19D69A /* Debug */,
+				B8BB6BD15DD19CADF4582F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 05DC72AEDD0A51893056FE39 /* Project object */;
+	rootObject = C171C10917F613A71EB6BA99 /* Project object */;
 }

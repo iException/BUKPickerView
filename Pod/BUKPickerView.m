@@ -7,76 +7,192 @@
 //
 
 #import "BUKPickerView.h"
-#import <BUKDynamicPopView.h>
+
+@interface BUKPickerViewTableViewHolder : UIView
+
+@property (nonatomic, strong) UITableView *buk_tableView;
+
+- (void)showLeftLineWithColor:(UIColor *)lineColor;
+
+@end
+
+@implementation BUKPickerViewTableViewHolder {
+    UIView *_leftLine;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self addSubview:self.buk_tableView];
+        
+        self.buk_tableView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_buk_tableView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_buk_tableView)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_buk_tableView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_buk_tableView)]];
+    }
+    
+    return self;
+}
+
+- (UITableView *)buk_tableView
+{
+    if (!_buk_tableView) {
+        _buk_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _buk_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return _buk_tableView;
+}
+
+- (void)showLeftLineWithColor:(UIColor *)lineColor
+{
+    if (!_leftLine) {
+        _leftLine = [[UIView alloc] init];
+        [self addSubview:_leftLine];
+        
+        _leftLine.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_leftLine(0.5)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_leftLine)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_leftLine]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_leftLine)]];
+    }
+    
+    _leftLine.backgroundColor = lineColor;
+}
+@end
+
+
+
 
 @interface BUKPickerView () <UITableViewDataSource, UITableViewDelegate, BUKDynamicPopViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *buk_tableViews;
+@property (nonatomic, strong) NSMutableArray *buk_tableViewHolders;
 
 @property (nonatomic, weak) NSLayoutConstraint *buk_firstTableViewTopConstraint;
+
+@property (nonatomic, weak) id<BUKPickerViewDataSourceAndDelegate> buk_delegate;
 
 @end
 
 @implementation BUKPickerView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithDelegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
-        [self buk_addFirstTableView];
+        self.buk_delegate = delegate;
+        self.backgroundColor = [UIColor whiteColor];
+        [self buk_addFirstTableViewHolder];
     }
+    
     return self;
+}
+
+- (void)showInView:(UIView *)view
+{
+    [self buk_dynamicShowInView:view];
+}
+
+- (void)hide
+{
+    [self buk_dynamicHide];
 }
 
 - (void)push
 {
-    UITableView *pre = [self.buk_tableViews lastObject];
+    BUKPickerViewTableViewHolder *preHolder = [self.buk_tableViewHolders lastObject];
+    BUKPickerViewTableViewHolder *firstHolder = [self.buk_tableViewHolders firstObject];
     
-    UITableView *next = [self buk_pickerTableView];
-    [self.buk_tableViews addObject:next];
+    BUKPickerViewTableViewHolder *nextHolder = [self buk_pickerTableViewHolder];
+    [self.buk_tableViewHolders addObject:nextHolder];
     
-    CGFloat depth = [self buk_depthForTableView:next];
+    CGFloat depth = [self buk_depthForTableViewHolder:nextHolder];
     
-    [self buk_registerCellClassOrNibForTableView:next depth:depth];
+    [self buk_registerCellClassOrNibForTableView:nextHolder.buk_tableView depth:depth];
     
-    CGFloat coverRate = [self buk_coverRateForTableView:next depth:depth];
+    CGFloat coverRate = [self buk_coverRateForTableView:nextHolder.buk_tableView depth:depth];
     
-    CGRect frame = pre.bounds;
+    if (coverRate < 1.0 && depth != 0) {
+        [nextHolder showLeftLineWithColor:[UIColor colorWithRed:0xde/255.0 green:0xde/255.0 blue:0xde/255.0 alpha:1.0]];
+    }
+    
+    CGRect frame = firstHolder.bounds;
     frame.size.width *= coverRate;
-    next.frame = frame;
+    nextHolder.frame = frame;
     
-    next.buk_animationStyle = [self buk_animationStyleWithView:next];
-    next.buk_dynamicBackground.backgroundColor = [UIColor clearColor];
-    next.buk_dynamicPopViewDelegate = self;
+    nextHolder.buk_animationStyle = [self buk_animationStyleWithView:nextHolder];
+    nextHolder.buk_dynamicPopViewDelegate = self;
+    nextHolder.buk_dynamicBackground.hidden = YES;
     
-    [next buk_dynamicShowInView:pre];
+    [nextHolder buk_dynamicShowInView:preHolder];
+    
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_pickerView:didFinishPushToDepth:)]) {
+        [self.buk_delegate buk_pickerView:self didFinishPushToDepth:depth];
+    }
 }
 
 - (BOOL)pop
 {
-    if (self.buk_tableViews.count <= 1) {
+    if (self.buk_tableViewHolders.count <= 1) {
         return NO;
     }
     
-    UITableView *last = [self.buk_tableViews lastObject];
-    [last buk_dynamicHide];
-    [self.buk_tableViews removeLastObject];
+    BUKPickerViewTableViewHolder *lastHolder = [self.buk_tableViewHolders lastObject];
+    [lastHolder buk_dynamicHide];
+    [self.buk_tableViewHolders removeLastObject];
+    
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_pickerView:didFinishPopToDepth:)]) {
+        [self.buk_delegate buk_pickerView:self didFinishPopToDepth:self.buk_tableViewHolders.count - 1];
+    }
 
     return YES;
+}
+
+- (BOOL)popToDepth:(NSInteger)depth
+{
+    NSInteger currentDepth = self.buk_tableViewHolders.count - 1;
+    
+    if (currentDepth <= depth) {
+        return NO;
+    }
+    
+    BUKPickerViewTableViewHolder *holder = [self.buk_tableViewHolders objectAtIndex:depth + 1];
+    [holder buk_dynamicHide];
+    [self.buk_tableViewHolders removeObjectsInRange:NSMakeRange(depth + 1, currentDepth - depth)];
+    
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_pickerView:didFinishPopToDepth:)]) {
+        [self.buk_delegate buk_pickerView:self didFinishPopToDepth:depth];
+    }
+    
+    return YES;
+}
+
+- (UITableView *)tableViewAtDepth:(NSInteger)depth
+{
+    if (depth >= self.buk_tableViewHolders.count) {
+        return nil;
+    }
+    
+    BUKPickerViewTableViewHolder *holder = [self.buk_tableViewHolders objectAtIndex:depth];
+    
+    if (!holder || ![holder isKindOfClass:[BUKPickerViewTableViewHolder class]]) {
+        return nil;
+    }
+    
+    return holder.buk_tableView;
 }
 
 #pragma mark - BUKDynamicPopViewDelegate -
 - (void)buk_dynamicPopViewBackgroundTapped:(UIView *)view
 {
-    NSInteger index = [self.buk_tableViews indexOfObject:view];
-    [self.buk_tableViews removeObjectsInRange:NSMakeRange(index, self.buk_tableViews.count - index)];
+    NSInteger index = [self.buk_tableViewHolders indexOfObject:view];
+    [self.buk_tableViewHolders removeObjectsInRange:NSMakeRange(index, self.buk_tableViewHolders.count - index)];
 }
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:numberOfRowsInSection:depth:)]) {
-        return [self.delegate tableView:tableView numberOfRowsInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:numberOfRowsInSection:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView numberOfRowsInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return 0;
@@ -84,8 +200,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:depth:)]) {
-        return [self.delegate tableView:tableView cellForRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:cellForRowAtIndexPath:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView cellForRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return [tableView dequeueReusableCellWithIdentifier:@"BUKPickerViewDefaultCell" forIndexPath:indexPath];
@@ -93,22 +209,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:depth:)]) {
-        [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:didSelectRowAtIndexPath:depth:pickerView:)]) {
+        [self.buk_delegate buk_tableView:tableView didSelectRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:depth:)]) {
-        [self.delegate tableView:tableView didDeselectRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:didDeselectRowAtIndexPath:depth:pickerView:)]) {
+        [self.buk_delegate buk_tableView:tableView didDeselectRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(numberOfSectionsInTableView:depth:)]) {
-        return [self.delegate numberOfSectionsInTableView:tableView depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_numberOfSectionsInTableView:depth:pickerView:)]) {
+        return [self.buk_delegate buk_numberOfSectionsInTableView:tableView depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return 1;
@@ -116,8 +232,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:depth:)]) {
-        return [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:heightForRowAtIndexPath:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView heightForRowAtIndexPath:indexPath depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return 44.0f;
@@ -125,8 +241,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:depth:)]) {
-        return [self.delegate tableView:tableView heightForHeaderInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:heightForRowAtIndexPath:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView heightForHeaderInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return 0.01f;
@@ -134,8 +250,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:depth:)]) {
-        [self.delegate tableView:tableView heightForFooterInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:heightForFooterInSection:depth:pickerView:)]) {
+        [self.buk_delegate buk_tableView:tableView heightForFooterInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return 0.01f;
@@ -143,8 +259,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:titleForHeaderInSection:depth:)]) {
-        return [self.delegate tableView:tableView titleForHeaderInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:titleForHeaderInSection:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView titleForHeaderInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return nil;
@@ -152,8 +268,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:titleForFooterInSection:depth:)]) {
-        [self.delegate tableView:tableView titleForFooterInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:titleForFooterInSection:depth:pickerView:)]) {
+        [self.buk_delegate buk_tableView:tableView titleForFooterInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return nil;
@@ -161,8 +277,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:depth:)]) {
-        return [self.delegate tableView:tableView viewForHeaderInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:viewForHeaderInSection:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView viewForHeaderInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return nil;
@@ -170,53 +286,69 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:depth:)]) {
-        return [self.delegate tableView:tableView viewForFooterInSection:section depth:[self buk_depthForTableView:tableView]];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:viewForFooterInSection:depth:pickerView:)]) {
+        return [self.buk_delegate buk_tableView:tableView viewForFooterInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     
     return nil;
 }
 
-#pragma mark - private methods - 
+#pragma mark - private methods -
+- (NSInteger)buk_depthForTableViewHolder:(BUKPickerViewTableViewHolder *)tableViewHolder
+{
+    return [self.buk_tableViewHolders indexOfObject:tableViewHolder];
+}
+
 - (NSInteger)buk_depthForTableView:(UITableView *)tableView
 {
-    return [self.buk_tableViews indexOfObject:tableView];
+    __block NSInteger depth = NSNotFound;
+    [self.buk_tableViewHolders enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(BUKPickerViewTableViewHolder *holder, NSUInteger idx, BOOL *stop) {
+        if (holder.buk_tableView == tableView) {
+            depth = idx;
+            *stop = YES;
+        }
+    }];
+    
+    return depth;
 }
 
-- (UITableView *)buk_pickerTableView
+- (BUKPickerViewTableViewHolder *)buk_pickerTableViewHolder
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    return tableView;
+    BUKPickerViewTableViewHolder *holder = [[BUKPickerViewTableViewHolder alloc] init];
+    holder.buk_tableView.dataSource = self;
+    holder.buk_tableView.delegate = self;
+    
+    return holder;
 }
 
-- (void)buk_addFirstTableView
+- (void)buk_addFirstTableViewHolder
 {
-    UITableView *first = [self buk_pickerTableView];
+    BUKPickerViewTableViewHolder *first = [self buk_pickerTableViewHolder];
     [self addSubview:first];
-    [self.buk_tableViews addObject:first];
+    [self.buk_tableViewHolders addObject:first];
+    
+    [self buk_registerCellClassOrNibForTableView:first.buk_tableView depth:0];
     
     first.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[first]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(first)]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:first attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-    self.buk_firstTableViewTopConstraint = [NSLayoutConstraint constraintWithItem:first attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.titleView? :self attribute:self.titleView? NSLayoutAttributeBottom : NSLayoutAttributeTop multiplier:1.0 constant:0];
-    [self addConstraint:self.buk_firstTableViewTopConstraint];
+    
+    [self buk_updateFirstTableViewTopConstraint];
 }
 
 - (void)buk_registerCellClassOrNibForTableView:(UITableView *)tableView depth:(NSInteger)depth
 {
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BUKPickerViewDefaultCell"];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(registerCellClassOrNibForTableView:depth:)]) {
-        [self.delegate registerCellClassOrNibForTableView:tableView depth:depth];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_registerCellClassOrNibForTableView:depth:pickerView:)]) {
+        [self.buk_delegate buk_registerCellClassOrNibForTableView:tableView depth:depth pickerView:self];
     }
 }
 
 - (CGFloat)buk_coverRateForTableView:(UITableView *)tableView depth:(NSInteger)depth
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(coverRateForTableView:depth:)]) {
-        return [self.delegate coverRateForTableView:tableView depth:depth];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_coverRateForTableView:depth:pickerView:)]) {
+        return [self.buk_delegate buk_coverRateForTableView:tableView depth:depth pickerView:self];
     }
     
     return 1.0f;
@@ -232,12 +364,56 @@
     return style;
 }
 
-#pragma mark - setter && getter -
-- (NSMutableArray *)buk_tableViews
+- (void)buk_updateFirstTableViewTopConstraint
 {
-    if (!_buk_tableViews) {
-        _buk_tableViews = [[NSMutableArray alloc] init];
+    if (self.buk_firstTableViewTopConstraint) {
+        [self removeConstraint:self.buk_firstTableViewTopConstraint];
     }
-    return _buk_tableViews;
+    
+    BUKPickerViewTableViewHolder *firstHolder = [self.buk_tableViewHolders firstObject];
+    
+    if (!firstHolder) {
+        return;
+    }
+    
+    self.buk_firstTableViewTopConstraint = [NSLayoutConstraint constraintWithItem:firstHolder
+                                                                        attribute:NSLayoutAttributeTop
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:self.titleView? :self
+                                                                        attribute:self.titleView? NSLayoutAttributeBottom : NSLayoutAttributeTop
+                                                                       multiplier:1.0
+                                                                         constant:0];
+    [self addConstraint:self.buk_firstTableViewTopConstraint];
+
+}
+
+#pragma mark - setter && getter -
+- (NSMutableArray *)buk_tableViewHolders
+{
+    if (!_buk_tableViewHolders) {
+        _buk_tableViewHolders = [[NSMutableArray alloc] init];
+    }
+    return _buk_tableViewHolders;
+}
+
+- (void)setTitleView:(UIView *)titleView
+{
+    [self willChangeValueForKey:NSStringFromSelector(@selector(titleView))];
+    [_titleView removeFromSuperview];
+    _titleView = titleView;
+    [self addSubview:_titleView];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(titleView))];
+    
+    if (_titleView) {
+        CGFloat height = CGRectGetHeight(_titleView.frame);
+        if (height <= 0) {
+            height = 44.0;
+        }
+        _titleView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_titleView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_titleView)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_titleView(height)]" options:0 metrics:@{@"height":@(height)} views:NSDictionaryOfVariableBindings(_titleView)]];
+    }
+    [self buk_updateFirstTableViewTopConstraint];
+    
 }
 @end

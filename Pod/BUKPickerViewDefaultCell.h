@@ -1,0 +1,18 @@
+//
+//  BUKPickerViewDefaultCellTableViewCell.h
+//  Pods
+//
+//  Created by hyice on 15/8/7.
+//
+//
+
+#import <UIKit/UIKit.h>
+
+@interface BUKPickerViewDefaultCell : UITableViewCell
+
+@property (strong, nonatomic) UIColor *normalStateBgColor;
+@property (strong, nonatomic) UIColor *normalStateTextColor;
+@property (strong, nonatomic) UIColor *selectedStateBgColor;
+@property (strong, nonatomic) UIColor *selectedStateTextColor;
+
+@end

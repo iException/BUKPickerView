@@ -1,15 +1,22 @@
 # BUKPickerView
 
-[![CI Status](http://img.shields.io/travis/hyice/BUKPickerView.svg?style=flat)](https://travis-ci.org/hyice/BUKPickerView)
-[![Version](https://img.shields.io/cocoapods/v/BUKPickerView.svg?style=flat)](http://cocoapods.org/pods/BUKPickerView)
-[![License](https://img.shields.io/cocoapods/l/BUKPickerView.svg?style=flat)](http://cocoapods.org/pods/BUKPickerView)
-[![Platform](https://img.shields.io/cocoapods/p/BUKPickerView.svg?style=flat)](http://cocoapods.org/pods/BUKPickerView)
+BUKPickerView is used for multi level data selection. Using UITableView to display each level's data,
+and UITableViewCell for each item. You can set the delegate to your own class, and implement the delegate
+methods for any situation.
+
+But I think delegate is quite flexible for simple data selection, I also provide a BUKPickViewModel class.
+BUKPickerViewModel's instance can directly be used as BUKPickerView's delegate, and providing ways for customize.
+
+I wish the BUKPickerViewModel can satisfy most of your needs, or you need to write your own delegate or just 
+open some issues in the github.
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Download the code, and see the sample.
 
 ## Requirements
+
+iOS 7.0 and later.
 
 ## Installation
 

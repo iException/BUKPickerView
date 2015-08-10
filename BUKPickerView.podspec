@@ -12,8 +12,15 @@ Pod::Spec.new do |s|
   s.version          = "1.0.0"
   s.summary          = "Data picker using UITableViews, allow multi level selection and multi selection."
   s.description      = <<-DESC 
-                       Data picker using UITableViews, allow multi level selection and multi selection. You
-                       can simply use it.
+                        BUKPickerView is used for multi level data selection. Using UITableView to display each level's data,
+                        and UITableViewCell for each item. You can set the delegate to your own class, and implement the delegate
+                        methods for any situation.
+
+                        But I think delegate is quite flexible for simple data selection, I also provide a BUKPickViewModel class.
+                        BUKPickerViewModel's instance can directly be used as BUKPickerView's delegate, and providing ways for customize.
+
+                        I wish the BUKPickerViewModel can satisfy most of your needs, or you need to write your own delegate or just
+                        open some issues in the github.
                        DESC
   s.homepage         = "https://github.com/iException/BUKPickerView"
   s.license          = 'MIT'
@@ -25,5 +32,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/*'
 
-  s.dependency 'BUKDynamicPopView', '~> 1.0.0'
+  s.dependency 'BUKDynamicPopView', '~> 1.0.1'
 end
