@@ -101,6 +101,12 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (void)buk_registerCellClassOrNibForTableView:(UITableView *)tableView depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
     self.buk_pickerView = pickerView;
+    
+    if (depth % 2 == 0) {
+        tableView.backgroundColor = self.oddLevelCellNormalBgColor;
+    }else {
+        tableView.backgroundColor = self.evenLevelCellNormalBgColor;
+    }
 
     if (self.needTitleView && pickerView.titleView != self.buk_titleView) {
         pickerView.titleView = self.buk_titleView;
