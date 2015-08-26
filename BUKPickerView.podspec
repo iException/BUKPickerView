@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BUKPickerView"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Data picker using UITableViews, allow multi level selection and multi selection."
   s.description      = <<-DESC 
                         BUKPickerView is used for multi level data selection. Using UITableView to display each level's data,
@@ -32,5 +32,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/*'
 
-  s.dependency 'BUKDynamicPopView', '~> 1.0.1'
+  s.dependency 'BUKDynamicPopView', '~> 1.0.2'
 end
