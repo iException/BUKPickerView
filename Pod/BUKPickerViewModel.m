@@ -43,6 +43,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         
         [self.buk_itemsStack addObject:items];
         
+        [self buk_loadDefaultSelectionsFromItems:items];
+        
         _coverRates = [self buk_defaultCoverRateForItems:items];
         _needTitleView = YES;
         
@@ -256,6 +258,30 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         self.buk_completeBlock(result);
     }
 }
+
+- (void)buk_loadDefaultSelectionsFromItems:(NSArray *)items
+{
+    if (![items isKindOfClass:[NSArray class]]) {
+        NSAssert(NO, @"BUKPickerViewModel: Not Valid BUKPickerViewItem Children!");
+        return;
+    }
+    
+    [items enumerateObjectsUsingBlock:^(BUKPickerViewItem *item, NSUInteger idx, BOOL *stop) {
+        if (![item isKindOfClass:[BUKPickerViewItem class]]) {
+            NSAssert(NO, @"BUKPickerViewModel: Not Valid BUKPickerViewItem!");
+            return;
+        }
+        
+        if (item.isSelected) {
+            [self.buk_selectionResult addObject:item];
+        }
+        
+        if (item.children) {
+            [self buk_loadDefaultSelectionsFromItems:item.children];
+        }
+    }];
+}
+
 
 #pragma mark - setter && getter -
 - (NSMutableArray *)buk_itemsStack
