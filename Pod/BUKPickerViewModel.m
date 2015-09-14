@@ -21,7 +21,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 @property (nonatomic, strong) NSMutableArray *buk_itemsStack;
 @property (nonatomic, copy) void (^buk_completeBlock)(id result);
-@property (nonatomic, strong) BUKPickerTitleView *buk_titleView;
+@property (nonatomic, strong) BUKPickerTitleView *titleView;
 @property (nonatomic, weak) BUKPickerView *buk_pickerView;
 @property (nonatomic, strong) NSMutableArray *buk_selectionResult;
 
@@ -110,8 +110,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         tableView.backgroundColor = self.evenLevelCellNormalBgColor;
     }
 
-    if (self.needTitleView && pickerView.titleView != self.buk_titleView) {
-        pickerView.titleView = self.buk_titleView;
+    if (self.needTitleView && pickerView.titleView != self.titleView) {
+        pickerView.titleView = self.titleView;
     }
     
     [tableView registerClass:[BUKPickerViewDefaultCell class] forCellReuseIdentifier:kBUKPickerViewDefaultCellIdentifier];
@@ -182,7 +182,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         return;
     }
     
-    self.buk_titleView.leftButton.hidden = depth == 0;
+    self.titleView.leftButton.hidden = depth == 0;
 }
 
 - (void)buk_pickerView:(BUKPickerView *)pickerView didFinishPushToDepth:(NSInteger)depth
@@ -191,7 +191,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         return;
     }
     
-    self.buk_titleView.leftButton.hidden = depth == 0;
+    self.titleView.leftButton.hidden = depth == 0;
 }
 
 #pragma mark - private
@@ -293,14 +293,14 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     return _buk_itemsStack;
 }
 
-- (BUKPickerTitleView *)buk_titleView
+- (BUKPickerTitleView *)titleView
 {
-    if (!_buk_titleView) {
-        _buk_titleView = [[BUKPickerTitleView alloc] init];
-        _buk_titleView.leftButton.hidden = YES;
-        _buk_titleView.rightButton.hidden = !self.allowMultiSelect;
+    if (!_titleView) {
+        _titleView = [[BUKPickerTitleView alloc] init];
+        _titleView.leftButton.hidden = YES;
+        _titleView.rightButton.hidden = !self.allowMultiSelect;
         __weak typeof(self) weakSelf = self;
-        _buk_titleView.leftButtonAction = ^(BUKPickerTitleView *titleView) {
+        _titleView.leftButtonAction = ^(BUKPickerTitleView *titleView) {
             [weakSelf.buk_itemsStack removeLastObject];
             [weakSelf.buk_pickerView pop];
             
@@ -309,13 +309,13 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
                 [tableView deselectRowAtIndexPath:tableView.indexPathForSelectedRow animated:NO];
             }
         };
-        _buk_titleView.rightButtonAction = ^(BUKPickerTitleView *titleView) {
+        _titleView.rightButtonAction = ^(BUKPickerTitleView *titleView) {
             [weakSelf buk_finishSelectionWithResult:weakSelf.buk_selectionResult];
             [weakSelf.buk_pickerView buk_dynamicHide];
         };
     }
     
-    return _buk_titleView;
+    return _titleView;
 }
 
 - (NSMutableArray *)buk_selectionResult
@@ -333,8 +333,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     _allowMultiSelect = allowMultiSelect;
     [self didChangeValueForKey:NSStringFromSelector(@selector(allowMultiSelect))];
     
-    if (!_buk_titleView) {
-        self.buk_titleView.rightButton.hidden = !allowMultiSelect;
+    if (!_titleView) {
+        self.titleView.rightButton.hidden = !allowMultiSelect;
     }
 }
 

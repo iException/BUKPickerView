@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BUKPickerView.h"
 
+@class BUKPickerTitleView;
+
 @interface BUKPickerViewItem : NSObject
 
 /**
@@ -64,6 +66,11 @@
  *  Default is YES, using `BUKPickerTitleView`.
  */
 @property (nonatomic, assign) BOOL needTitleView;
+
+/**
+ *  Title view for picker view if `needTitleView` is set to YES.
+ */
+@property (nonatomic, strong, readonly) BUKPickerTitleView *titleView;
 
 /**
  *  Default is NO.
