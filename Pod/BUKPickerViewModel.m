@@ -145,17 +145,18 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     
     BUKPickerViewItem *item = [self buk_itemAtIndexPath:indexPath depth:depth];
     
-    if (item.children) {
+    if (item.children && item.children.count != 0) {
         [self.buk_itemsStack addObject:item.children];
         [pickerView push];
-    } else if (item.lazyChildren) {
+    } else if (item.lazyChildren && !item.children) {
         item.lazyChildren(^(NSArray *chilren) {
-            if (!chilren) {
+            if (!chilren || ![chilren isKindOfClass:[NSArray class]]) {
                 return ;
             }
+            
             item.children = chilren;
-            [self.buk_itemsStack addObject:chilren];
-            [pickerView push];
+            
+            [self buk_tableView:tableView didSelectRowAtIndexPath:indexPath depth:depth pickerView:pickerView];
         });
         
     } else {
@@ -172,7 +173,6 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             [self buk_finishSelectionWithResult:item];
             [pickerView buk_dynamicHide];
         }
-        
     }
 }
 

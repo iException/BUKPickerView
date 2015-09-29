@@ -36,6 +36,9 @@
  *  next level when children is returned by the block. Block will be involved only once, property
  *  `children` will be set after block returned.
  *
+ *  If you pass an empty array as children, the parent item will be directly selected.
+ *  If you pass nil as children, this will be considered as a loading error.
+ *
  *  @warning If `children` is set, property `lazyChildren` will be discarded.
  */
 @property (nonatomic, copy) void (^lazyChildren)(void (^complete)(NSArray *children));
