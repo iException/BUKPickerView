@@ -82,6 +82,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         return;
     }
     
+    self.buk_itemsStack = nil;
     [self.buk_itemsStack addObject:items];
     
     [self buk_loadDefaultSelectionsFromItems:items];
@@ -123,7 +124,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }
-
+    
     return cell;
 }
 
@@ -136,7 +137,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }else {
         tableView.backgroundColor = self.evenLevelCellNormalBgColor;
     }
-
+    
     if (self.needTitleView && pickerView.titleView != self.titleView) {
         pickerView.titleView = self.titleView;
     }
@@ -327,12 +328,34 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 - (void)buk_showLoadingView
 {
+    [self.loadingView removeFromSuperview];
+    
     [self.buk_pickerView addSubview:self.loadingView];
+    self.loadingView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.buk_pickerView addConstraints:@[
+                                          [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.needTitleView ? self.titleView : self.buk_pickerView attribute:self.needTitleView? NSLayoutAttributeBottom : NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                          [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.buk_pickerView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+                                          [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.buk_pickerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+                                          [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.buk_pickerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]
+                                          ]];
+    
+    self.loadingView.alpha = 0.0f;
+    [UIView animateWithDuration:0.25f animations:^{
+        self.loadingView.alpha = 1.0f;
+    }];
 }
 
 - (void)buk_hideLoadingView
 {
-    [self.loadingView removeFromSuperview];
+    CALayer *layer = [self.loadingView.layer presentationLayer];
+    CGFloat alpha = layer.opacity;
+    [self.loadingView.layer removeAllAnimations];
+    self.loadingView.alpha = alpha;
+    [UIView animateWithDuration:0.25f animations:^{
+        self.loadingView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [self.loadingView removeFromSuperview];
+    }];
 }
 
 
@@ -384,10 +407,10 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 {
     if (!_loadingView) {
         _loadingView = [[UIView alloc] init];
-        _loadingView.backgroundColor = [UIColor blackColor];
-        _loadingView.alpha = 0.7;
+        _loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicator startAnimating];
         [_loadingView addSubview:indicator];
         
         indicator.translatesAutoresizingMaskIntoConstraints = NO;
