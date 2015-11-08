@@ -21,6 +21,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 @property (nonatomic, strong) NSMutableArray *buk_itemsStack;
 @property (nonatomic, copy) void (^buk_completeBlock)(id result);
+@property (nonatomic, copy) void (^buk_lazyLoadBlock)(BUKFinishLoadPickerViewItemsBlock finishLoad);
 @property (nonatomic, strong) BUKPickerTitleView *titleView;
 @property (nonatomic, weak) BUKPickerView *buk_pickerView;
 @property (nonatomic, strong) NSMutableArray *buk_selectionResult;
@@ -31,35 +32,61 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 - (instancetype)initWithPickerViewItems:(NSArray *)items complete:(void (^)(id))complete
 {
-    if (!items || ![items isKindOfClass:[NSArray class]]) {
-        return nil;
-    }
-    
     self = [super init];
     
     if (self) {
         
+        [self buk_setupDefaultViewStyle];
+        
         self.buk_completeBlock = complete;
         
-        [self.buk_itemsStack addObject:items];
-        
-        [self buk_loadDefaultSelectionsFromItems:items];
-        
-        _coverRates = [self buk_defaultCoverRateForItems:items];
-        _needTitleView = YES;
-        
-        _oddLevelCellNormalTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
-        _oddLevelCellNormalBgColor = [UIColor whiteColor];
-        _oddLevelCellHighlightTextColor = [UIColor orangeColor];
-        _oddLevelCellHighlightBgColor = [UIColor colorWithRed:0xf8/255.0 green:0xf8/255.0 blue:0xf8/255.0 alpha:1.0];
-        
-        _evenLevelCellNormalTextColor = _oddLevelCellNormalTextColor;
-        _evenLevelCellNormalBgColor = _oddLevelCellHighlightBgColor;
-        _evenLevelCellHighlightTextColor = _oddLevelCellHighlightTextColor;
-        _evenLevelCellHighlightBgColor = _oddLevelCellNormalBgColor;
+        [self buk_addRootItems:items];
     }
     
     return self;
+}
+
+- (instancetype)initWithLazyPickerViewItems:(void (^)(BUKFinishLoadPickerViewItemsBlock))lazyLoad complete:(void (^)(id))complete
+{
+    self = [super init];
+    
+    if (self) {
+        
+        [self buk_setupDefaultViewStyle];
+        
+        self.buk_completeBlock = complete;
+        self.buk_lazyLoadBlock = lazyLoad;
+    }
+    
+    return self;
+}
+
+- (void)buk_setupDefaultViewStyle
+{
+    _needTitleView = YES;
+    
+    _oddLevelCellNormalTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
+    _oddLevelCellNormalBgColor = [UIColor whiteColor];
+    _oddLevelCellHighlightTextColor = [UIColor orangeColor];
+    _oddLevelCellHighlightBgColor = [UIColor colorWithRed:0xf8/255.0 green:0xf8/255.0 blue:0xf8/255.0 alpha:1.0];
+    
+    _evenLevelCellNormalTextColor = _oddLevelCellNormalTextColor;
+    _evenLevelCellNormalBgColor = _oddLevelCellHighlightBgColor;
+    _evenLevelCellHighlightTextColor = _oddLevelCellHighlightTextColor;
+    _evenLevelCellHighlightBgColor = _oddLevelCellNormalBgColor;
+}
+
+- (void)buk_addRootItems:(NSArray *)items
+{
+    if (!items || ![items isKindOfClass:[NSArray class]]) {
+        return;
+    }
+    
+    [self.buk_itemsStack addObject:items];
+    
+    [self buk_loadDefaultSelectionsFromItems:items];
+    
+    _coverRates = [self buk_defaultCoverRateForItems:items];
 }
 
 #pragma mark - BUKPickerViewDataSourceAndDelegate
@@ -149,6 +176,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         [self.buk_itemsStack addObject:item.children];
         [pickerView push];
     } else if (item.lazyChildren && !item.children) {
+        [self buk_showLoadingView];
         item.lazyChildren(^(NSArray *chilren) {
             if (!chilren || ![chilren isKindOfClass:[NSArray class]]) {
                 return ;
@@ -157,6 +185,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             item.children = chilren;
             
             [self buk_tableView:tableView didSelectRowAtIndexPath:indexPath depth:depth pickerView:pickerView];
+            
+            [self buk_hideLoadingView];
         });
         
     } else {
@@ -197,6 +227,19 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 #pragma mark - private
 - (NSArray *)buk_itemsStackAtDepth:(NSInteger)depth
 {
+    if (self.buk_lazyLoadBlock) {
+        BUKFinishLoadPickerViewItemsBlock finishLoad = ^(NSArray *items) {
+            self.buk_lazyLoadBlock = nil;
+            [self buk_addRootItems:items];
+            [[self.buk_pickerView tableViewAtDepth:0] reloadData];
+            [self buk_hideLoadingView];
+        };
+        
+        [self buk_showLoadingView];
+        self.buk_lazyLoadBlock(finishLoad);
+        return nil;
+    }
+    
     if (self.buk_itemsStack.count <= depth) {
         return nil;
     }
@@ -282,6 +325,16 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }];
 }
 
+- (void)buk_showLoadingView
+{
+    [self.buk_pickerView addSubview:self.loadingView];
+}
+
+- (void)buk_hideLoadingView
+{
+    [self.loadingView removeFromSuperview];
+}
+
 
 #pragma mark - setter && getter -
 - (NSMutableArray *)buk_itemsStack
@@ -325,6 +378,27 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }
     
     return _buk_selectionResult;
+}
+
+- (UIView *)loadingView
+{
+    if (!_loadingView) {
+        _loadingView = [[UIView alloc] init];
+        _loadingView.backgroundColor = [UIColor blackColor];
+        _loadingView.alpha = 0.7;
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [_loadingView addSubview:indicator];
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = NO;
+        [_loadingView addConstraints:@[
+                                       [NSLayoutConstraint constraintWithItem:indicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_loadingView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
+                                       [NSLayoutConstraint constraintWithItem:indicator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_loadingView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]
+                                       ]
+         ];
+    }
+    
+    return _loadingView;
 }
 
 - (void)setAllowMultiSelect:(BOOL)allowMultiSelect

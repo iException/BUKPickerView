@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BUKPickerView.h"
 
+typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
+
 @class BUKPickerTitleView;
 
 @interface BUKPickerViewItem : NSObject
@@ -41,7 +43,7 @@
  *
  *  @warning If `children` is set, property `lazyChildren` will be discarded.
  */
-@property (nonatomic, copy) void (^lazyChildren)(void (^complete)(NSArray *children));
+@property (nonatomic, copy) void (^lazyChildren)(BUKFinishLoadPickerViewItemsBlock complete);
 
 /**
  *  Selection state for item. If item has `children` or `lazyChildren` set, this property will be discarded.
@@ -63,6 +65,10 @@
 
 @end
 
+
+
+
+
 @interface BUKPickerViewModel : NSObject <BUKPickerViewDataSourceAndDelegate>
 
 /**
@@ -74,6 +80,12 @@
  *  Title view for picker view if `needTitleView` is set to YES.
  */
 @property (nonatomic, strong, readonly) BUKPickerTitleView *titleView;
+
+/**
+ *  Displayed when lazy load block is triggered. You can custom the view
+ *  by assigning a new view to this property.
+ */
+@property (nonatomic, strong) UIView *loadingView UI_APPEARANCE_SELECTOR;
 
 /**
  *  Default is NO.
@@ -112,6 +124,13 @@
  *  set to YES, then block will be involved when the right button in the title view be pressed. The parameter
  *  `result` will be an array of `BUKPickerViewItem`s.
  */
-- (instancetype)initWithPickerViewItems:(NSArray *)items complete:(void (^)(id result))complete;
+- (instancetype)initWithPickerViewItems:(NSArray *)items
+                               complete:(void (^)(id result))complete;
+
+/**
+ *  Same as -initWithPickerViewItems:complete:, only make it possible for lazy load.
+ */
+- (instancetype)initWithLazyPickerViewItems:(void (^)(BUKFinishLoadPickerViewItemsBlock finishLoad))lazyLoad
+                                   complete:(void (^)(id result))complete;
 
 @end
