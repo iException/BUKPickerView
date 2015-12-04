@@ -46,7 +46,8 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 @property (nonatomic, copy) void (^lazyChildren)(BUKFinishLoadPickerViewItemsBlock complete);
 
 /**
- *  Selection state for item. If item has `children` or `lazyChildren` set, this property will be discarded.
+ *  Selection state for item. If item has `children` or `lazyChildren` set, next level will be load
+ *  in single selection mode, while this flag will be discard in multi selection mode.
  */
 @property (nonatomic, assign) BOOL isSelected;
 

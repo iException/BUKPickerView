@@ -317,7 +317,13 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         }
         
         if (item.isSelected) {
-            [self.buk_selectionResult addObject:item];
+            if (item.children || item.lazyChildren) {
+                if (!self.allowMultiSelect) {
+                    [self.buk_itemsStack addObject:items];
+                }
+            } else {
+                [self.buk_selectionResult addObject:item];
+            }
         }
         
         if (item.children) {

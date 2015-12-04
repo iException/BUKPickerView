@@ -81,7 +81,10 @@
     if (self) {
         self.buk_delegate = delegate;
         self.backgroundColor = [UIColor whiteColor];
-        [self buk_addFirstTableViewHolder];
+        
+        while ([self push]) {
+            [self push];
+        }
     }
     
     return self;
@@ -97,37 +100,34 @@
     [self buk_dynamicHide];
 }
 
-- (void)push
+- (BOOL)push
 {
-    BUKPickerViewTableViewHolder *preHolder = [self.buk_tableViewHolders lastObject];
-    BUKPickerViewTableViewHolder *firstHolder = [self.buk_tableViewHolders firstObject];
-    
     BUKPickerViewTableViewHolder *nextHolder = [self buk_pickerTableViewHolder];
-    [self.buk_tableViewHolders addObject:nextHolder];
+
+    CGFloat depth = self.buk_tableViewHolders.count;
     
-    CGFloat depth = [self buk_depthForTableViewHolder:nextHolder];
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:numberOfRowsInSection:depth:pickerView:)]) {
+        NSInteger count = [self.buk_delegate buk_tableView:nextHolder.buk_tableView numberOfRowsInSection:0 depth:depth pickerView:self];
+        if (count == 0) {
+            return NO;
+        }
+    }
+    
+    [self.buk_tableViewHolders addObject:nextHolder];
     
     [self buk_registerCellClassOrNibForTableView:nextHolder.buk_tableView depth:depth];
     
-    CGFloat coverRate = [self buk_coverRateForTableView:nextHolder.buk_tableView depth:depth];
-    
-    if (coverRate < 1.0 && depth != 0) {
-        [nextHolder showLeftLineWithColor:[UIColor colorWithRed:0xde/255.0 green:0xde/255.0 blue:0xde/255.0 alpha:1.0]];
+    if (depth == 0) {
+        [self buk_addFirstTableViewHolder:nextHolder];
+    } else {
+        [self buk_addOtherTableViewHolder:nextHolder depth:depth];
     }
-    
-    CGRect frame = firstHolder.bounds;
-    frame.size.width *= coverRate;
-    nextHolder.frame = frame;
-    
-    nextHolder.buk_animationStyle = [self buk_animationStyleWithView:nextHolder];
-    nextHolder.buk_dynamicPopViewDelegate = self;
-    nextHolder.buk_dynamicBackground.hidden = YES;
-    
-    [nextHolder buk_dynamicShowInView:preHolder];
     
     if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_pickerView:didFinishPushToDepth:)]) {
         [self.buk_delegate buk_pickerView:self didFinishPushToDepth:depth];
     }
+    
+    return YES;
 }
 
 - (BOOL)pop
@@ -321,19 +321,37 @@
     return holder;
 }
 
-- (void)buk_addFirstTableViewHolder
+- (void)buk_addFirstTableViewHolder:(BUKPickerViewTableViewHolder *)first
 {
-    BUKPickerViewTableViewHolder *first = [self buk_pickerTableViewHolder];
     [self addSubview:first];
-    [self.buk_tableViewHolders addObject:first];
-    
-    [self buk_registerCellClassOrNibForTableView:first.buk_tableView depth:0];
     
     first.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[first]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(first)]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:first attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
     
     [self buk_updateFirstTableViewTopConstraint];
+}
+
+- (void)buk_addOtherTableViewHolder:(BUKPickerViewTableViewHolder *)nextHolder depth:(NSInteger)depth
+{
+    BUKPickerViewTableViewHolder *preHolder = [self.buk_tableViewHolders objectAtIndex:depth - 1];
+    BUKPickerViewTableViewHolder *firstHolder = [self.buk_tableViewHolders firstObject];
+    
+    CGFloat coverRate = [self buk_coverRateForTableView:nextHolder.buk_tableView depth:depth];
+    
+    if (coverRate < 1.0) {
+        [nextHolder showLeftLineWithColor:[UIColor colorWithRed:0xde/255.0 green:0xde/255.0 blue:0xde/255.0 alpha:1.0]];
+    }
+    
+    CGRect frame = firstHolder.bounds;
+    frame.size.width *= coverRate;
+    nextHolder.frame = frame;
+    
+    nextHolder.buk_animationStyle = [self buk_animationStyleWithView:nextHolder];
+    nextHolder.buk_dynamicPopViewDelegate = self;
+    nextHolder.buk_dynamicBackground.hidden = YES;
+    
+    [nextHolder buk_dynamicShowInView:preHolder];
 }
 
 - (void)buk_registerCellClassOrNibForTableView:(UITableView *)tableView depth:(NSInteger)depth

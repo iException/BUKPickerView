@@ -68,7 +68,7 @@
 
 - (instancetype)initWithDelegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate;
 
-- (void)push;
+- (BOOL)push;
 - (BOOL)pop;
 
 /**
