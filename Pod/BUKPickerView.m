@@ -75,9 +75,9 @@
 
 @implementation BUKPickerView
 
-- (instancetype)initWithDelegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         self.buk_delegate = delegate;
         self.backgroundColor = [UIColor whiteColor];
@@ -103,7 +103,7 @@
 - (BOOL)push
 {
     BUKPickerViewTableViewHolder *nextHolder = [self buk_pickerTableViewHolder];
-
+    
     CGFloat depth = self.buk_tableViewHolders.count;
     
     if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:numberOfRowsInSection:depth:pickerView:)]) {
@@ -143,7 +143,7 @@
     if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_pickerView:didFinishPopToDepth:)]) {
         [self.buk_delegate buk_pickerView:self didFinishPopToDepth:self.buk_tableViewHolders.count - 1];
     }
-
+    
     return YES;
 }
 
@@ -323,6 +323,7 @@
 
 - (void)buk_addFirstTableViewHolder:(BUKPickerViewTableViewHolder *)first
 {
+    first.frame = self.bounds;
     [self addSubview:first];
     
     first.translatesAutoresizingMaskIntoConstraints = NO;
@@ -402,7 +403,7 @@
                                                                        multiplier:1.0
                                                                          constant:0];
     [self addConstraint:self.buk_firstTableViewTopConstraint];
-
+    
 }
 
 #pragma mark - setter && getter -

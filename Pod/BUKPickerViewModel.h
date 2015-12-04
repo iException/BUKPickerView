@@ -27,7 +27,7 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 
 /**
  *  Children items for next level. If the children is async fetched(such as a url request), you can
- *  lazy load the children use `lazyChildren` instead of this. 
+ *  lazy load the children use `lazyChildren` instead of this.
  *
  *  @warning If `children` is set, property `lazyChildren` will be discarded.
  */
@@ -46,8 +46,8 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 @property (nonatomic, copy) void (^lazyChildren)(BUKFinishLoadPickerViewItemsBlock complete);
 
 /**
- *  Selection state for item. If item has `children` or `lazyChildren` set, next level will be load
- *  in single selection mode, while this flag will be discard in multi selection mode.
+ *  Selection state for item. If item has `children` set, next level will be load
+ *  in single selection mode, otherwhise this flag will be discarded.
  */
 @property (nonatomic, assign) BOOL isSelected;
 
@@ -121,7 +121,7 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
  *  @param items    NSArray consist of BUKPickerViewItems.
  *  @param complete Block will be involved when selection finished. If property `allowMultiSelect`
  *  is not set to YES, then block will be involved when item which doesn't have children and lazyChildren
- *  is selected. The parameter `result` will be an `BUKPickerViewItem`. If property `allowMultiSelect` is 
+ *  is selected. The parameter `result` will be an `BUKPickerViewItem`. If property `allowMultiSelect` is
  *  set to YES, then block will be involved when the right button in the title view be pressed. The parameter
  *  `result` will be an array of `BUKPickerViewItem`s.
  */

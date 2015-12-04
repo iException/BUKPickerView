@@ -55,7 +55,7 @@
  *  But I think delegate is quite flexible for simple data selection, I also provide a BUKPickViewModel class.
  *  BUKPickerViewModel's instance can directly be used as BUKPickerView's delegate, and providing ways for customize.
  *
- *  I wish the BUKPickerViewModel can satisfy most of your needs, or you need to write your own delegate or just 
+ *  I wish the BUKPickerViewModel can satisfy most of your needs, or you need to write your own delegate or just
  *  open some issues in the github.
  */
 @interface BUKPickerView : UIView
@@ -66,7 +66,7 @@
  */
 @property (nonatomic, strong) UIView *titleView;
 
-- (instancetype)initWithDelegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<BUKPickerViewDataSourceAndDelegate>)delegate;
 
 - (BOOL)push;
 - (BOOL)pop;
