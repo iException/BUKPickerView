@@ -32,5 +32,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/*'
 
-  s.dependency 'BUKDynamicPopView', '~> 1.0.3'
+  s.dependency 'BUKDynamicPopView'
 end
