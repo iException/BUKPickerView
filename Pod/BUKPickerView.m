@@ -82,15 +82,12 @@
         self.buk_delegate = delegate;
         self.backgroundColor = [UIColor whiteColor];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buk_receivePopViewWillShowNotification:) name:BUKDynamicPopViewWillShowNotification object:nil];
+        while ([self push]) {
+            [self push];
+        }
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - public -
@@ -173,21 +170,6 @@
     }
     
     return holder.buk_tableView;
-}
-
-#pragma mark - notifcation events -
-- (void)buk_receivePopViewWillShowNotification:(NSNotification *)notification
-{
-    while ([self push]) {
-        [self push];
-    }
-}
-
-#pragma mark - BUKDynamicPopViewDelegate -
-- (void)buk_dynamicPopViewBackgroundTapped:(UIView *)view
-{
-    NSInteger index = [self.buk_tableViewHolders indexOfObject:view];
-    [self.buk_tableViewHolders removeObjectsInRange:NSMakeRange(index, self.buk_tableViewHolders.count - index)];
 }
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate -

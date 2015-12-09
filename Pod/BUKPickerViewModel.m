@@ -95,6 +95,11 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 #pragma mark - BUKPickerViewDataSourceAndDelegate
 - (NSInteger)buk_tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
+    self.buk_pickerView = pickerView;
+    if (self.needTitleView && pickerView.titleView != self.titleView) {
+        pickerView.titleView = self.titleView;
+    }
+    
     return [self buk_itemsStackAtDepth:depth].count;
 }
 
@@ -134,16 +139,10 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 - (void)buk_registerCellClassOrNibForTableView:(UITableView *)tableView depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
-    self.buk_pickerView = pickerView;
-    
     if (depth % 2 == 0) {
         tableView.backgroundColor = self.oddLevelCellNormalBgColor;
     }else {
         tableView.backgroundColor = self.evenLevelCellNormalBgColor;
-    }
-    
-    if (self.needTitleView && pickerView.titleView != self.titleView) {
-        pickerView.titleView = self.titleView;
     }
     
     [tableView registerClass:[BUKPickerViewDefaultCell class] forCellReuseIdentifier:kBUKPickerViewDefaultCellIdentifier];
@@ -239,15 +238,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (NSArray *)buk_itemsStackAtDepth:(NSInteger)depth
 {
     if (self.buk_lazyLoadBlock) {
-        BUKFinishLoadPickerViewItemsBlock finishLoad = ^(NSArray *items) {
-            self.buk_lazyLoadBlock = nil;
-            [self buk_addRootItems:items];
-            [[self.buk_pickerView tableViewAtDepth:0] reloadData];
-            [self buk_hideLoadingView];
-        };
-        
-        [self buk_showLoadingView];
-        self.buk_lazyLoadBlock(finishLoad);
+        [self buk_asyncLoadLazyLoadItems];
         return nil;
     }
     
@@ -261,6 +252,23 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }
     
     return items;
+}
+
+- (void)buk_asyncLoadLazyLoadItems
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        BUKFinishLoadPickerViewItemsBlock finishLoad = ^(NSArray *items) {
+            self.buk_lazyLoadBlock = nil;
+            [self buk_addRootItems:items];
+            [self.buk_pickerView push];
+            [self buk_hideLoadingView];
+        };
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self buk_showLoadingView];
+            self.buk_lazyLoadBlock(finishLoad);
+        });
+    });
 }
 
 - (BUKPickerViewItem *)buk_itemAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth
