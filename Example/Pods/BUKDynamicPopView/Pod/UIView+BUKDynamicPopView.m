@@ -14,6 +14,11 @@
 
 #import "BUKXOrYMoveAnimationStyle.h"
 
+NSString * BUKDynamicPopViewWillShowNotification = @"BUKDynamicPopViewWillShowNotification";
+NSString * BUKDynamicPopViewWillHideNotification = @"BUKDynamicPopViewWillHideNotification";
+NSString * BUKDynamicPopViewDidShowNotification = @"BUKDynamicPopViewDidShowNotification";
+NSString * BUKDynamicPopViewDidHideNotification = @"BUKDynamicPopViewDidHideNotification";
+
 @interface UIView ()
 @property (nonatomic, assign) BOOL buk_popViewIsAnimating;
 @end
@@ -55,29 +60,14 @@
 
 - (void)buk_dynamicHide
 {
-    if (self.buk_dynamicPopViewDelegate
-        && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewWillHide:)]) {
-        [self.buk_dynamicPopViewDelegate buk_dynamicPopViewWillHide:self];
+    if (self.buk_popViewIsAnimating &&
+        [self.buk_dynamicShowBehavior respondsToSelector:@selector(buk_cancelAnimationForView:complete:)]) {
+        [self.buk_dynamicShowBehavior buk_cancelAnimationForView:self complete:^{
+            [self buk_dynamicHideAnimation];
+        }];
+    } else {
+        [self buk_dynamicHideAnimation];
     }
-    self.buk_popViewIsAnimating = YES;
-    CGPoint centerAfterHide = [self.buk_animationStyle buk_viewCenterAfterHide];
-    [self.buk_dynamicHideBehavior buk_animateView:self toCenter:centerAfterHide complete:^{
-        [self removeFromSuperview];
-        if (self.buk_dynamicBackground) {
-            [UIView animateWithDuration:0.2f animations:^{
-                self.buk_dynamicBackground.alpha = 0;
-            } completion:^(BOOL finished) {
-                [self.buk_dynamicBackground removeFromSuperview];
-            }];
-
-        }
-        self.buk_popViewIsAnimating = NO;
-
-        if (self.buk_dynamicPopViewDelegate
-            && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewDidHide:)]) {
-            [self.buk_dynamicPopViewDelegate buk_dynamicPopViewDidHide:self];
-        }
-    }];
 }
 
 #pragma mark - private -
@@ -112,10 +102,13 @@
 
 - (void)buk_dynamicShowAnimation
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:BUKDynamicPopViewWillShowNotification object:nil];
+    
     if (self.buk_dynamicPopViewDelegate
         && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewWillShow:)]) {
         [self.buk_dynamicPopViewDelegate buk_dynamicPopViewWillShow:self];
     }
+    
     self.buk_popViewIsAnimating = YES;
     [self buk_insertBackground];
     
@@ -123,6 +116,9 @@
     CGPoint centerWhenShowing = [self.buk_animationStyle buk_viewCenterWhenShowing];
     
     self.center = centerBeforeShow;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:BUKDynamicPopViewDidShowNotification object:nil];
+    
     [self.buk_dynamicShowBehavior buk_animateView:self toCenter:centerWhenShowing complete:^{
         self.buk_popViewIsAnimating = NO;
 
@@ -133,13 +129,41 @@
     }];
 }
 
+- (void)buk_dynamicHideAnimation
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:BUKDynamicPopViewWillHideNotification object:nil];
+    
+    if (self.buk_dynamicPopViewDelegate
+        && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewWillHide:)]) {
+        [self.buk_dynamicPopViewDelegate buk_dynamicPopViewWillHide:self];
+    }
+    
+    self.buk_popViewIsAnimating = YES;
+    CGPoint centerAfterHide = [self.buk_animationStyle buk_viewCenterAfterHide];
+    [self.buk_dynamicHideBehavior buk_animateView:self toCenter:centerAfterHide complete:^{
+        [self removeFromSuperview];
+        if (self.buk_dynamicBackground) {
+            [UIView animateWithDuration:0.2f animations:^{
+                self.buk_dynamicBackground.alpha = 0;
+            } completion:^(BOOL finished) {
+                [self.buk_dynamicBackground removeFromSuperview];
+            }];
+            
+        }
+        self.buk_popViewIsAnimating = NO;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:BUKDynamicPopViewDidHideNotification object:nil];
+        
+        if (self.buk_dynamicPopViewDelegate
+            && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewDidHide:)]) {
+            [self.buk_dynamicPopViewDelegate buk_dynamicPopViewDidHide:self];
+        }
+    }];
+}
+
 #pragma mark - event -
 - (void)buk_backgroundHideTap:(UIGestureRecognizer *)gesture
 {
-    if (self.buk_popViewIsAnimating) {
-        return;
-    }
-    
     if (self.buk_dynamicPopViewDelegate
         && [self.buk_dynamicPopViewDelegate respondsToSelector:@selector(buk_dynamicPopViewBackgroundTapped:)]) {
         [self.buk_dynamicPopViewDelegate buk_dynamicPopViewBackgroundTapped:self];

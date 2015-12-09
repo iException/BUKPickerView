@@ -25,7 +25,7 @@
     if (!view || !view.superview) {
         return;
     }
-
+    
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:view.superview];
     self.animator.delegate = self;
     self.completeBlock = complete;
@@ -58,9 +58,9 @@
     }else {
         CGFloat boundaryY;
         if (deltaY > 0) {
-            boundaryY = view.frame.size.height/2.0 + endCenter.y + 0.5;
+            boundaryY = view.frame.size.height/2.0 + endCenter.y - 0.5;
         }else {
-            boundaryY = endCenter.y - view.frame.size.height/2.0 - 0.5;
+            boundaryY = endCenter.y - view.frame.size.height/2.0 + 0.5;
         }
         [collisionBehavior addBoundaryWithIdentifier:@([view hash])
                                            fromPoint:CGPointMake(0, boundaryY)
@@ -76,6 +76,14 @@
     }
     
     self.animator = nil;
+}
+
+- (void)buk_cancelAnimationForView:(UIView *)view complete:(void (^)())complete
+{
+    [self.animator removeAllBehaviors];
+    self.animator = nil;
+    self.completeBlock = nil;
+    complete();
 }
 
 @end

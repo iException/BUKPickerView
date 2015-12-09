@@ -1,8 +1,8 @@
 {
   "name": "BUKPickerView",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "summary": "Data picker using UITableViews, allow multi level selection and multi selection.",
-  "description": "                       Data picker using UITableViews, allow multi level selection and multi selection. You\n                       can simply use it.\n",
+  "description": "BUKPickerView is used for multi level data selection. Using UITableView to display each level's data,\nand UITableViewCell for each item. You can set the delegate to your own class, and implement the delegate\nmethods for any situation.\n\nBut I think delegate is quite flexible for simple data selection, I also provide a BUKPickViewModel class.\nBUKPickerViewModel's instance can directly be used as BUKPickerView's delegate, and providing ways for customize.\n\nI wish the BUKPickerViewModel can satisfy most of your needs, or you need to write your own delegate or just\nopen some issues in the github.",
   "homepage": "https://github.com/iException/BUKPickerView",
   "license": "MIT",
   "authors": {
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/iException/BUKPickerView.git",
-    "tag": "1.0.0"
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "7.0"
@@ -19,7 +19,7 @@
   "source_files": "Pod/*",
   "dependencies": {
     "BUKDynamicPopView": [
-      "~> 1.0.1"
+      "~> 1.0.3"
     ]
   }
 }

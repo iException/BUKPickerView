@@ -1,5 +1,5 @@
 framework module BUKPickerView {
-  umbrella header "Pods-BUKPickerView_Tests-BUKPickerView-umbrella.h"
+  umbrella header "BUKPickerView-umbrella.h"
 
   export *
   module * { export * }

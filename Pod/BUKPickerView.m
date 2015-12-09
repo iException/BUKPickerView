@@ -82,24 +82,18 @@
         self.buk_delegate = delegate;
         self.backgroundColor = [UIColor whiteColor];
         
-        while ([self push]) {
-            [self push];
-        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buk_receivePopViewWillShowNotification:) name:BUKDynamicPopViewWillShowNotification object:nil];
     }
     
     return self;
 }
 
-- (void)showInView:(UIView *)view
+- (void)dealloc
 {
-    [self buk_dynamicShowInView:view];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)hide
-{
-    [self buk_dynamicHide];
-}
-
+#pragma mark - public -
 - (BOOL)push
 {
     BUKPickerViewTableViewHolder *nextHolder = [self buk_pickerTableViewHolder];
@@ -179,6 +173,14 @@
     }
     
     return holder.buk_tableView;
+}
+
+#pragma mark - notifcation events -
+- (void)buk_receivePopViewWillShowNotification:(NSNotification *)notification
+{
+    while ([self push]) {
+        [self push];
+    }
 }
 
 #pragma mark - BUKDynamicPopViewDelegate -
