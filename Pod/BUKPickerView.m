@@ -63,7 +63,7 @@
 
 
 
-@interface BUKPickerView () <UITableViewDataSource, UITableViewDelegate, BUKDynamicPopViewDelegate>
+@interface BUKPickerView () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *buk_tableViewHolders;
 
@@ -333,7 +333,6 @@
     nextHolder.frame = frame;
     
     nextHolder.buk_animationStyle = [self buk_animationStyleWithView:nextHolder];
-    nextHolder.buk_dynamicPopViewDelegate = self;
     nextHolder.buk_dynamicBackground.hidden = YES;
     
     [nextHolder buk_dynamicShowInView:preHolder];
