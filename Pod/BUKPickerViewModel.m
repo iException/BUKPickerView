@@ -200,9 +200,15 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             if (item.isSelected) {
                 item.isSelected = NO;
                 [self.buk_selectionResult removeObject:item];
-            }else {
-                item.isSelected = YES;
-                [self.buk_selectionResult addObject:item];
+            } else {
+                if (self.buk_selectionResult.count == self.maxSelectionCount) {
+                    if (self.overSelectionAction) {
+                        self.overSelectionAction();
+                    }
+                } else {
+                    item.isSelected = YES;
+                    [self.buk_selectionResult addObject:item];
+                }
             }
             [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         }else {

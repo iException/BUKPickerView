@@ -94,6 +94,16 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 @property (nonatomic, assign) BOOL allowMultiSelect;
 
 /**
+ *  if allowMultiSelect, total selection count should be less than this value
+ */
+@property (nonatomic, assign) NSInteger maxSelectionCount;
+
+/**
+ *  if user tries to over select, perform this action
+ */
+@property (nonatomic, copy) void(^overSelectionAction)(void);
+
+/**
  *  Default each level share the screen equally. Such as 1.0, 0.75, 0.5, 0.25 for 4 level dataSource.
  *  If coverRates array's count if less than levels, the last rate will be used again and again.
  *
