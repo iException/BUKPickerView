@@ -201,7 +201,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
                 item.isSelected = NO;
                 [self.buk_selectionResult removeObject:item];
             } else {
-                if (self.buk_selectionResult.count == self.maxSelectionCount) {
+                if (self.maxSelectionCount > 0 && self.buk_selectionResult.count == self.maxSelectionCount) {
                     if (self.overSelectionAction) {
                         self.overSelectionAction();
                     }
