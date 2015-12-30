@@ -118,6 +118,11 @@
         [self.buk_delegate buk_pickerView:self didFinishPushToDepth:depth];
     }
     
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:firstSelectedIndexPathInDepth:pickerView:)]) {
+        NSIndexPath *firstIndexPath = [self.buk_delegate buk_tableView:nextHolder.buk_tableView firstSelectedIndexPathInDepth:depth pickerView:self];
+        [nextHolder.buk_tableView scrollToRowAtIndexPath:firstIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    
     return YES;
 }
 
