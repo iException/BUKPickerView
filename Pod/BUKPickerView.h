@@ -44,6 +44,8 @@
 - (UIView *)buk_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView;
 - (UIView *)buk_tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView;
 
+- (NSIndexPath *)buk_tableView:(UITableView *)tableView firstSelectedIndexPathInDepth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView;
+
 @end
 
 
