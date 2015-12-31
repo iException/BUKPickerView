@@ -120,6 +120,9 @@
     
     if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:firstSelectedIndexPathInDepth:pickerView:)]) {
         NSIndexPath *firstIndexPath = [self.buk_delegate buk_tableView:nextHolder.buk_tableView firstSelectedIndexPathInDepth:depth pickerView:self];
+        if (!firstIndexPath) {
+            firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        }
         [nextHolder.buk_tableView scrollToRowAtIndexPath:firstIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
     
