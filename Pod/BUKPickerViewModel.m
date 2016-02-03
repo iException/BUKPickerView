@@ -195,26 +195,22 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             [self buk_hideLoadingView];
         });
         
-    } else {
-        if (self.allowMultiSelect) {
-            if (item.isSelected) {
-                item.isSelected = NO;
-                [self.buk_selectionResult removeObject:item];
-            } else {
-                if (self.maxSelectionCount > 0 && self.buk_selectionResult.count == self.maxSelectionCount) {
-                    if (self.overSelectionAction) {
-                        self.overSelectionAction();
-                    }
-                } else {
-                    item.isSelected = YES;
-                    [self.buk_selectionResult addObject:item];
-                }
+    } else if (self.allowMultiSelect) {
+        if (item.isSelected) {
+            item.isSelected = NO;
+            [self.buk_selectionResult removeObject:item];
+        } else if (self.maxSelectionCount > 0 && self.buk_selectionResult.count == self.maxSelectionCount) {
+            if (self.overSelectionAction) {
+                self.overSelectionAction();
             }
-            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }else {
-            [self buk_finishSelectionWithResult:item];
-            [pickerView buk_dynamicHide];
+        } else {
+            item.isSelected = YES;
+            [self.buk_selectionResult addObject:item];
         }
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    } else {
+        [self buk_finishSelectionWithResult:item];
+        [pickerView buk_dynamicHide];
     }
 }
 
@@ -238,27 +234,6 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }
     
     self.titleView.leftButton.hidden = depth == 0;
-}
-
-- (NSIndexPath *)buk_tableView:(UITableView *)tableView firstSelectedIndexPathInDepth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
-{
-    NSArray *items = [self buk_itemsStackAtDepth:depth];
-    
-    if (!items || items.count == 0) {
-        return [NSIndexPath indexPathForRow:0 inSection:0];
-    }
-    
-    for (int i = 0; i < items.count; i++) {
-        BUKPickerViewItem *item = [items objectAtIndex:i];
-        if (![item isKindOfClass:[BUKPickerViewItem class]]) {
-            continue;
-        }
-        if (item.isSelected) {
-            return [NSIndexPath indexPathForRow:i inSection:0];
-        }
-    }
-
-    return [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 #pragma mark - private

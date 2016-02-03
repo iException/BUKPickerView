@@ -75,8 +75,7 @@
 - (BUKPickerView *)pickerView
 {
     if (!_pickerView) {
-        _pickerView = [[BUKPickerView alloc] initWithDelegate:self.pickerViewModel];
-        _pickerView.frame = CGRectMake(10, 0, 300, 500);
+        _pickerView = [[BUKPickerView alloc] initWithFrame:CGRectMake(10, 0, 300, 500) delegate:self.pickerViewModel];
     }
     return _pickerView;
 }
