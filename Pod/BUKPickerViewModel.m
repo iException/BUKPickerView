@@ -227,7 +227,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 
 - (void)buk_pickerView:(BUKPickerView *)pickerView didFinishPushToDepth:(NSInteger)depth
 {
-    [self buk_highlightDefaultSelectionAtDepth:depth];
+    [self buk_handleDefaultSelectionAtDepth:depth];
     
     if (!self.needTitleView) {
         return;
@@ -384,7 +384,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }];
 }
 
-- (void)buk_highlightDefaultSelectionAtDepth:(NSInteger)depth
+- (void)buk_handleDefaultSelectionAtDepth:(NSInteger)depth
 {
     NSInteger stackCount = self.buk_itemsStack.count;
     if (stackCount <= 1) {
@@ -424,9 +424,11 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (index != NSNotFound) {
         UITableView *tableView = [self.buk_pickerView tableViewAtDepth:depth];
         [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+        if (index > 2) {
+            [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index - 2 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+        }
     }
 }
-
 
 #pragma mark - setter && getter -
 - (NSMutableArray *)buk_itemsStack
