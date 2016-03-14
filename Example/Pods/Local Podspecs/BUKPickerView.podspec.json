@@ -19,7 +19,7 @@
   "source_files": "Pod/*",
   "dependencies": {
     "BUKDynamicPopView": [
-      "~> 1.0.3"
+
     ]
   }
 }

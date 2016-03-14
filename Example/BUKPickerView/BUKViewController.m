@@ -38,6 +38,7 @@
 
 - (void)showPickerView
 {
+    self.pickerView = nil;
     [self.pickerView buk_dynamicShowInView:self.view];
 }
 //
@@ -75,6 +76,7 @@
 - (BUKPickerView *)pickerView
 {
     if (!_pickerView) {
+        self.pickerViewModel = nil;
         _pickerView = [[BUKPickerView alloc] initWithFrame:CGRectMake(10, 0, 300, 500) delegate:self.pickerViewModel];
     }
     return _pickerView;
@@ -83,7 +85,7 @@
 - (BUKPickerViewItem *)oneItem
 {
     BUKPickerViewItem *item = [[BUKPickerViewItem alloc] init];
-    item.title = @"Just For Test.";
+    item.title = @"ABC DEF GHI JKL MNO PQR STU VWX YZA BCD EFG HIJ";
     return item;
 }
 
@@ -117,6 +119,7 @@
         _pickerViewModel = [[BUKPickerViewModel alloc] initWithPickerViewItems:[self tenItemsWithChildren:second] complete:^(id result) {
             NSLog(@"result:%@", result);
         }];
+        _pickerViewModel.enableMultiLineTitleForCell = YES;
         _pickerViewModel.allowMultiSelect = YES;
         _pickerViewModel.coverRates = @[@1.0, @0.8, @0.6, @0.4];
     }

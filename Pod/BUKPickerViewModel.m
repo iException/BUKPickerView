@@ -120,21 +120,25 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }
     
     BUKPickerViewItem *item = [self buk_itemAtIndexPath:indexPath depth:depth];
-    if (item) {
-        cell.imageView.image = item.image;
-        cell.textLabel.text = item.title;
-        if (item.isSelected) {
-            if (!item.children && !item.lazyChildren) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            }
-        } else if (item.children || item.lazyChildren) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        } else {
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
-    }
+    [self buk_setupCell:cell withPickViewItem:item];
     
     return cell;
+}
+
+- (CGFloat)buk_tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
+{
+    if (self.enableMultiLineTitleForCell) {
+        BUKPickerViewItem *item = [self buk_itemAtIndexPath:indexPath depth:depth];
+        CGFloat coverRate = [self buk_coverRateForTableView:tableView depth:depth pickerView:pickerView];
+        CGFloat width = CGRectGetWidth(pickerView.bounds) * coverRate;
+        CGFloat height = [BUKPickerViewDefaultCell suitableHeightForCellWithWidth:width
+                                                                             text:item.title
+                                                                            image:item.image
+                                                                    accessoryType:[self buk_accessoryTypeForItem:item]];
+        return height;
+    }
+
+    return 44;
 }
 
 - (void)buk_registerCellClassOrNibForTableView:(UITableView *)tableView depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
@@ -428,6 +432,42 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index - 2 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
         }
     }
+}
+
+- (void)buk_setupCell:(BUKPickerViewDefaultCell *)cell withPickViewItem:(BUKPickerViewItem *)item
+{
+    if (!item) {
+        return;
+    }
+
+    if (!cell) {
+        return;
+    }
+
+    cell.imageView.image = item.image;
+    cell.textLabel.text = item.title;
+    cell.accessoryType = [self buk_accessoryTypeForItem:item];
+
+    if (self.enableMultiLineTitleForCell) {
+        cell.textLabel.numberOfLines = 0;
+    } else {
+        cell.textLabel.numberOfLines = 1;
+    }
+}
+
+- (UITableViewCellAccessoryType)buk_accessoryTypeForItem:(BUKPickerViewItem *)item
+{
+    if (item.isSelected) {
+        if (!item.children && !item.lazyChildren) {
+            return UITableViewCellAccessoryCheckmark;
+        }
+    }
+
+    if (item.children || item.lazyChildren) {
+        return UITableViewCellAccessoryDisclosureIndicator;
+    }
+
+    return UITableViewCellAccessoryNone;
 }
 
 #pragma mark - setter && getter -

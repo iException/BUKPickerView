@@ -8,6 +8,11 @@
 
 #import "BUKPickerViewDefaultCell.h"
 
+static CGFloat const kBUKPickerViewDefaultCellContentHorizontalPadding = 9;
+static CGFloat const kBUKPickerViewDefaultCellContentVerticalPadding = 6;
+static CGFloat const kBUKPickerViewDefaultCellContentImageMaxSize = 32;
+static CGFloat const kBUKPickerViewDefaultCellContentAccessoryWidth = 20;
+
 @implementation BUKPickerViewDefaultCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -15,12 +20,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.clipsToBounds = YES;
+        
         self.normalStateBgColor = [UIColor whiteColor];
         self.selectedStateBgColor = [UIColor colorWithRed:0xf8/255.0 green:0xf8/255.0 blue:0xf8/255.0 alpha:1.0];
         self.normalStateTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
         self.selectedStateTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
         
-        self.textLabel.font = [UIFont systemFontOfSize:15];
+        self.textLabel.font = [[self class] defaultFontSize];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -35,17 +42,62 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+
+    CGFloat xPadding = kBUKPickerViewDefaultCellContentHorizontalPadding;
+    CGFloat yPadding = kBUKPickerViewDefaultCellContentVerticalPadding;
+
     if (self.imageView.image) {
-        CGFloat xPadding = 9;
-        CGFloat yPadding = 6;
-        
-        CGFloat size = CGRectGetHeight(self.frame) - 2*yPadding;
-        self.imageView.frame = CGRectMake(xPadding, yPadding, size, size);
-        
-        CGFloat labelStartX = 2*xPadding + size;
-        self.textLabel.frame = CGRectMake(labelStartX, yPadding, CGRectGetWidth(self.frame) - labelStartX, size);
+        self.imageView.frame = [[self class] imageRectWithHeightLimit:CGRectGetHeight(self.contentView.bounds)];
     }
+
+    CGFloat labelMaxX = CGRectGetWidth(self.bounds) - xPadding;
+    if (self.accessoryType != UITableViewCellAccessoryNone) {
+        labelMaxX -= kBUKPickerViewDefaultCellContentAccessoryWidth;
+    }
+
+    CGFloat labelStartX = CGRectGetMaxX(self.imageView.frame) + xPadding;
+    CGFloat labelWidth = labelMaxX - labelStartX;
+    CGFloat labelHeight = CGRectGetHeight(self.contentView.bounds) - 2*yPadding;
+    self.textLabel.frame = CGRectMake(labelStartX, yPadding, labelWidth, labelHeight);
+}
+
+#pragma mark - calculate size
++ (CGFloat)suitableHeightForCellWithWidth:(CGFloat)width text:(NSString *)text image:(UIImage *)image accessoryType:(UITableViewCellAccessoryType)accessoryType
+{
+    CGFloat labelMaxX = width - kBUKPickerViewDefaultCellContentHorizontalPadding;
+    if (accessoryType != UITableViewCellAccessoryNone) {
+        labelMaxX -= kBUKPickerViewDefaultCellContentAccessoryWidth;
+    }
+
+    CGFloat labelStartX = kBUKPickerViewDefaultCellContentHorizontalPadding;
+    if (image) {
+        labelStartX = kBUKPickerViewDefaultCellContentHorizontalPadding * 2 + kBUKPickerViewDefaultCellContentImageMaxSize;
+    }
+    CGFloat labelWidth = floor(labelMaxX - labelStartX);
+    CGFloat labelHeight = [text boundingRectWithSize:CGSizeMake(labelWidth, NSIntegerMax)
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:@{NSFontAttributeName : [self defaultFontSize]}
+                                             context:nil].size.height;
+
+    CGFloat suitableHeight = MAX(labelHeight, kBUKPickerViewDefaultCellContentImageMaxSize);
+    return ceil(suitableHeight + 2 * kBUKPickerViewDefaultCellContentVerticalPadding);
+}
+
++ (CGRect)imageRectWithHeightLimit:(CGFloat)heightLimit
+{
+    CGFloat size = heightLimit - 2*kBUKPickerViewDefaultCellContentVerticalPadding;
+    if (size > kBUKPickerViewDefaultCellContentImageMaxSize) {
+        size = kBUKPickerViewDefaultCellContentImageMaxSize;
+    }
+    return CGRectMake(kBUKPickerViewDefaultCellContentHorizontalPadding,
+                      kBUKPickerViewDefaultCellContentVerticalPadding,
+                      size,
+                      size);
+}
+
++ (UIFont *)defaultFontSize
+{
+    return [UIFont systemFontOfSize:15];
 }
 
 #pragma mark - bottom line

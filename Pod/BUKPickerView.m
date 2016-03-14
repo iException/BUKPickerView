@@ -225,7 +225,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:heightForRowAtIndexPath:depth:pickerView:)]) {
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_tableView:heightForHeaderInSection:depth:pickerView:)]) {
         return [self.buk_delegate buk_tableView:tableView heightForHeaderInSection:section depth:[self buk_depthForTableView:tableView] pickerView:self];
     }
     

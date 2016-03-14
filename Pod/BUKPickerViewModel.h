@@ -112,6 +112,11 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
  */
 @property (nonatomic, strong) NSArray *coverRates;
 
+/**
+ *  Default cell title can only be one line. Set this flag to YES to enable multi line title feature.
+ */
+@property (nonatomic, assign) BOOL enableMultiLineTitleForCell;
+
 
 // Custom Cell UI
 @property (nonatomic, strong) UIColor *oddLevelCellNormalTextColor UI_APPEARANCE_SELECTOR;

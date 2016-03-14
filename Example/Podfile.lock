@@ -1,7 +1,7 @@
 PODS:
   - BUKDynamicPopView (1.0.3)
   - BUKPickerView (1.0.3):
-    - BUKDynamicPopView (~> 1.0.3)
+    - BUKDynamicPopView
 
 DEPENDENCIES:
   - BUKPickerView (from `../`)
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BUKDynamicPopView: ace4710f05acaaba512360169ec782fa18d35d79
-  BUKPickerView: 6325ab2b80835ec27445e7c890a3e7f9d39dba80
+  BUKPickerView: 2266080bf5e9bffeb8eeda6a3e69157c7e00517a
 
 COCOAPODS: 0.39.0
