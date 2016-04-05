@@ -140,7 +140,7 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
  *  set to YES, then block will be involved when the right button in the title view be pressed. The parameter
  *  `result` will be an array of `BUKPickerViewItem`s.
  */
-- (instancetype)initWithPickerViewItems:(NSArray *)items
+- (instancetype)initWithPickerViewItems:(NSArray<BUKPickerViewItem *> *)items
                                complete:(void (^)(id result))complete;
 
 /**

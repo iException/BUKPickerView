@@ -277,6 +277,15 @@
     return nil;
 }
 
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    if (self.buk_delegate && [self.buk_delegate respondsToSelector:@selector(buk_sectionIndexTitlesForTableView:depth:pickerView:)]) {
+        return [self.buk_delegate buk_sectionIndexTitlesForTableView:tableView depth:[self buk_depthForTableView:tableView] pickerView:self];
+    }
+
+    return nil;
+}
+
 #pragma mark - private methods -
 - (NSInteger)buk_depthForTableViewHolder:(BUKPickerViewTableViewHolder *)tableViewHolder
 {
