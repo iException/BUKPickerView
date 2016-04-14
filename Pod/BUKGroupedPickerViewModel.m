@@ -332,7 +332,7 @@
             if (item.isSelected) {
                 if (item.children) {
                     if (!self.allowMultiSelect) {
-                        [self.buk_itemsStack addObject:item.children];
+                        [self.buk_sectionsStack addObject:item.children];
                     }
                 } else {
                     [self.buk_selectionResult addObject:item];
@@ -469,13 +469,12 @@
 }
 
 #pragma mark - setter && getter -
-- (NSMutableArray *)buk_itemsStack
+- (NSMutableArray *)buk_sectionsStack
 {
-    if (!_buk_itemsStack) {
-        _buk_itemsStack = [[NSMutableArray alloc] init];
+    if (!_buk_sectionsStack) {
+        _buk_sectionsStack = [[NSMutableArray alloc] init];
     }
-    
-    return _buk_itemsStack;
+    return _buk_sectionsStack;
 }
 
 - (BUKPickerTitleView *)titleView
@@ -486,10 +485,10 @@
         _titleView.rightButton.hidden = !self.allowMultiSelect;
         __weak typeof(self) weakSelf = self;
         _titleView.leftButtonAction = ^(BUKPickerTitleView *titleView) {
-            [weakSelf.buk_itemsStack removeLastObject];
+            [weakSelf.buk_sectionsStack removeLastObject];
             [weakSelf.buk_pickerView pop];
             
-            UITableView *tableView = [weakSelf.buk_pickerView tableViewAtDepth:weakSelf.buk_itemsStack.count - 1];
+            UITableView *tableView = [weakSelf.buk_pickerView tableViewAtDepth:weakSelf.buk_sectionsStack.count - 1];
             if (tableView) {
                 [tableView deselectRowAtIndexPath:tableView.indexPathForSelectedRow animated:NO];
             }
