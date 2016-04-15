@@ -11,6 +11,11 @@
 #import "BUKPickerTitleView.h"
 #import "BUKPickerViewDefaultCell.h"
 
+@implementation BUKPickerViewSection
+
+@end
+
+
 @interface BUKGroupedPickerViewModel ()
 
 @property (nonatomic, strong) NSMutableArray *buk_sectionsStack;
@@ -85,6 +90,48 @@
 }
 
 #pragma mark - BUKPickerViewDataSourceAndDelegate
+- (NSInteger)buk_numberOfSectionsInTableView:(UITableView *)tableView depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
+{
+    return [self buk_sectionsStackAtDepth:depth].count;
+}
+
+- (CGFloat)buk_tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
+{
+    if ([self buk_sectionsStackAtDepth:depth].count == 1) {
+        return 0.01f;
+    }
+    
+    return 24.0f;
+}
+
+- (UIView *)buk_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [self colorFromHexRGB:0xeff0e9 alpha:1.0];
+    BUKPickerViewSection *pickerViewSection = [[self buk_sectionsStackAtDepth:depth] objectAtIndex:section];
+    UILabel *label = [[UILabel alloc] init];
+    label.text = pickerViewSection.titleIndex;
+    label.font = [UIFont systemFontOfSize:14];
+    label.frame = CGRectMake(15, 0, 100, 0);
+    label.textColor = [self colorFromHexRGB:0xff4465 alpha:1.0f];
+    label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [headerView addSubview:label];
+    return headerView;
+}
+
+- (NSArray<NSString *> *)buk_sectionIndexTitlesForTableView:(UITableView *)tableView depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
+{
+    NSMutableArray *sectionIndices = [NSMutableArray array];
+    NSArray<BUKPickerViewSection *> *sections = [self buk_sectionsStackAtDepth:depth];
+    if (sections.count <= 1) {
+        return nil;
+    }
+    [sections enumerateObjectsUsingBlock:^(BUKPickerViewSection * _Nonnull section, NSUInteger idx, BOOL * _Nonnull stop) {
+        [sectionIndices addObject:section.titleIndex];
+    }];
+    return sectionIndices;
+}
+
 - (NSInteger)buk_tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
     self.buk_pickerView = pickerView;
@@ -92,7 +139,8 @@
         pickerView.titleView = self.titleView;
     }
     
-    return [self buk_sectionsStackAtDepth:depth].count;
+    BUKPickerViewSection *pickerViewSection = [[self buk_sectionsStackAtDepth:depth] objectAtIndex:section];
+    return pickerViewSection.items.count;
 }
 
 - (UITableViewCell *)buk_tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
@@ -273,11 +321,15 @@
 {
     NSArray *sections = [self buk_sectionsStackAtDepth:depth];
     
-    if (!sections || sections.count <= indexPath.row) {
+    if (!sections || sections.count <= indexPath.section) {
         return nil;
     }
     
     BUKPickerViewSection *section = [sections objectAtIndex:indexPath.section];
+    if (section.items.count <= indexPath.row) {
+        return nil;
+    }
+    
     BUKPickerViewItem *item = [section.items objectAtIndex:indexPath.row];
     
     if (![item isKindOfClass:[BUKPickerViewItem class]]) {
@@ -466,6 +518,16 @@
     }
     
     return UITableViewCellAccessoryNone;
+}
+
+- (UIColor *)colorFromHexRGB:(NSInteger)rgbValue alpha:(CGFloat)alpha
+{
+    NSInteger mask = 0x000000FF;
+    CGFloat red = ((rgbValue >> 16) & mask) / 255.0;
+    CGFloat green = ((rgbValue >> 8) & mask) / 255.0;
+    CGFloat blue = (rgbValue & mask) / 255.0;
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 #pragma mark - setter && getter -
