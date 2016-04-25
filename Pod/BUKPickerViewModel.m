@@ -122,6 +122,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (indexOfCell == NSNotFound) {
         return;
     }
+    BUKPickerViewItem *currentItem = [currentItems objectAtIndex:indexOfCell];
+    currentItem.isSelected = NO;
     UITableView *tableView = [self.buk_pickerView tableViewAtDepth:self.buk_itemsStack.count - 1];
     [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexOfCell inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
