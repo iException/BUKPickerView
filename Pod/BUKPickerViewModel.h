@@ -68,6 +68,18 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 
 
 
+@class BUKPickerViewModel;
+
+@protocol BUKPickerViewModelDelegate <NSObject>
+
+@optional;
+- (void)buk_pickerViewModel:(BUKPickerViewModel *)model didSelectItem:(BUKPickerViewItem *)item;
+- (void)buk_pickerViewModel:(BUKPickerViewModel *)model didDeselectItem:(BUKPickerViewItem *)item;
+
+@end
+
+
+
 
 
 @interface BUKPickerViewModel : NSObject <BUKPickerViewDataSourceAndDelegate>
@@ -129,6 +141,9 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 @property (nonatomic, strong) UIColor *evenLevelCellHighlightTextColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *evenLevelCellHighlightBgColor UI_APPEARANCE_SELECTOR;
 
+// delegate
+@property (nonatomic, weak) id<BUKPickerViewModelDelegate> delegate;
+
 
 /**
  *  Initialize a BUKPickerViewModel, which is used as BUKPickerView's delegate.
@@ -148,5 +163,8 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
  */
 - (instancetype)initWithLazyPickerViewItems:(void (^)(BUKFinishLoadPickerViewItemsBlock finishLoad))lazyLoad
                                    complete:(void (^)(id result))complete;
+
+
+- (void)deselectItem:(BUKPickerViewItem *)item;
 
 @end

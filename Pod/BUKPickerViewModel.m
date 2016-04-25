@@ -11,6 +11,49 @@
 #import "BUKPickerTitleView.h"
 
 @implementation BUKPickerViewItem
+
+- (BOOL)isEqual:(BUKPickerViewItem *)object
+{
+    if (self == object) {
+        return YES;
+    }
+
+    if (![object isKindOfClass:[BUKPickerViewItem class]]) {
+        return NO;
+    }
+
+    if (![object.title isEqual:self.title]) {
+        return NO;
+    }
+
+    if (![object.image isEqual:self.image]) {
+        return NO;
+    }
+
+    if (object.children == self.children) {
+        return NO;
+    }
+
+    if (object.lazyChildren != self.lazyChildren) {
+        return NO;
+    }
+
+    if (![object.selectValue isEqual:self.selectValue]) {
+        return NO;
+    }
+
+    if (object.parent == self.parent) {
+        return NO;
+    }
+
+    return YES;
+}
+
+- (NSUInteger)hash
+{
+    return [self.title hash];
+}
+
 @end
 
 
@@ -63,33 +106,24 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     return self;
 }
 
-- (void)buk_setupDefaultViewStyle
+#pragma mark - public -
+- (void)deselectItem:(BUKPickerViewItem *)item
 {
-    _needTitleView = YES;
-    
-    _oddLevelCellNormalTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
-    _oddLevelCellNormalBgColor = [UIColor whiteColor];
-    _oddLevelCellHighlightTextColor = [UIColor orangeColor];
-    _oddLevelCellHighlightBgColor = [UIColor colorWithRed:0xf8/255.0 green:0xf8/255.0 blue:0xf8/255.0 alpha:1.0];
-    
-    _evenLevelCellNormalTextColor = _oddLevelCellNormalTextColor;
-    _evenLevelCellNormalBgColor = _oddLevelCellHighlightBgColor;
-    _evenLevelCellHighlightTextColor = _oddLevelCellHighlightTextColor;
-    _evenLevelCellHighlightBgColor = _oddLevelCellNormalBgColor;
-}
+    NSUInteger index = [self.buk_selectionResult indexOfObject:item];
 
-- (void)buk_addRootItems:(NSArray *)items
-{
-    if (!items || ![items isKindOfClass:[NSArray class]]) {
+    if (index == NSNotFound) {
         return;
     }
-    
-    self.buk_itemsStack = nil;
-    [self.buk_itemsStack addObject:items];
-    
-    [self buk_loadDefaultSelectionsFromItems:items];
-    
-    _coverRates = [self buk_defaultCoverRateForItems:items];
+
+    [self.buk_selectionResult removeObjectAtIndex:index];
+
+    NSArray *currentItems = [self.buk_itemsStack lastObject];
+    NSUInteger indexOfCell = [currentItems indexOfObject:item];
+    if (indexOfCell == NSNotFound) {
+        return;
+    }
+    UITableView *tableView = [self.buk_pickerView tableViewAtDepth:self.buk_itemsStack.count - 1];
+    [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexOfCell inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - BUKPickerViewDataSourceAndDelegate
@@ -203,6 +237,10 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         if (item.isSelected) {
             item.isSelected = NO;
             [self.buk_selectionResult removeObject:item];
+
+            if (self.delegate && [self.delegate respondsToSelector:@selector(buk_pickerViewModel:didDeselectItem:)]) {
+                [self.delegate buk_pickerViewModel:self didDeselectItem:item];
+            }
         } else if (self.maxSelectionCount > 0 && self.buk_selectionResult.count == self.maxSelectionCount) {
             if (self.overSelectionAction) {
                 self.overSelectionAction();
@@ -210,10 +248,19 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         } else {
             item.isSelected = YES;
             [self.buk_selectionResult addObject:item];
+
+            if (self.delegate && [self.delegate respondsToSelector:@selector(buk_pickerViewModel:didSelectItem:)]) {
+                [self.delegate buk_pickerViewModel:self didSelectItem:item];
+            }
         }
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } else {
         [self buk_finishSelectionWithResult:item];
+
+        if (self.delegate && [self.delegate respondsToSelector:@selector(buk_pickerViewModel:didSelectItem:)]) {
+            [self.delegate buk_pickerViewModel:self didSelectItem:item];
+        }
+
         [pickerView buk_dynamicHide];
     }
 }
@@ -241,6 +288,35 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 }
 
 #pragma mark - private
+- (void)buk_setupDefaultViewStyle
+{
+    _needTitleView = YES;
+
+    _oddLevelCellNormalTextColor = [UIColor colorWithRed:0x66/255.0 green:0x66/255.0 blue:0x66/255.0 alpha:1.0];
+    _oddLevelCellNormalBgColor = [UIColor whiteColor];
+    _oddLevelCellHighlightTextColor = [UIColor orangeColor];
+    _oddLevelCellHighlightBgColor = [UIColor colorWithRed:0xf8/255.0 green:0xf8/255.0 blue:0xf8/255.0 alpha:1.0];
+
+    _evenLevelCellNormalTextColor = _oddLevelCellNormalTextColor;
+    _evenLevelCellNormalBgColor = _oddLevelCellHighlightBgColor;
+    _evenLevelCellHighlightTextColor = _oddLevelCellHighlightTextColor;
+    _evenLevelCellHighlightBgColor = _oddLevelCellNormalBgColor;
+}
+
+- (void)buk_addRootItems:(NSArray *)items
+{
+    if (!items || ![items isKindOfClass:[NSArray class]]) {
+        return;
+    }
+
+    self.buk_itemsStack = nil;
+    [self.buk_itemsStack addObject:items];
+
+    [self buk_loadDefaultSelectionsFromItems:items];
+
+    _coverRates = [self buk_defaultCoverRateForItems:items];
+}
+
 - (NSArray *)buk_itemsStackAtDepth:(NSInteger)depth
 {
     if (self.buk_lazyLoadBlock) {
