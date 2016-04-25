@@ -310,6 +310,8 @@
     BUKPickerViewTableViewHolder *holder = [[BUKPickerViewTableViewHolder alloc] init];
     holder.buk_tableView.dataSource = self;
     holder.buk_tableView.delegate = self;
+
+    holder.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     return holder;
 }
