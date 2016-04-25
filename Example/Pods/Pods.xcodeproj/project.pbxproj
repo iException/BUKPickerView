@@ -16,6 +16,8 @@
 		2E2082790AF61E723139965666B9D0FC /* BUKDynamicPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = F4A0FA95F9BA9BD7C3FF55BC880BC6A1 /* BUKDynamicPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D3A30265E3FE50FBAAC5CEA6723F6FA /* BUKPickerViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 611B1C4FFFC70A39931B67021E9C4B6F /* BUKPickerViewDefaultCell.m */; };
 		48C1E5FD57DC99C4F989197C77552C46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E901342E4F26457AD82C3760D84816C /* Foundation.framework */; };
+		53145CA31CBF6F6D0086E702 /* BUKGroupedPickerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 53145CA11CBF6F6D0086E702 /* BUKGroupedPickerViewModel.h */; };
+		53145CA41CBF6F6D0086E702 /* BUKGroupedPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53145CA21CBF6F6D0086E702 /* BUKGroupedPickerViewModel.m */; };
 		5340165BA000B4C0D6BFBD94A0B23E19 /* BUKPickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7018867E11A83E2203DDC00A1B66AE /* BUKPickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68CF870BAB6FF493CE1B1B2B02FEF74C /* BUKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734AF7839D6B5910F996A6CE128430A9 /* BUKPickerView.m */; };
 		763C51B743B06351C26F9F8C57AB8C6E /* BUKPickerTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83636299C233C28607C5FE3A469EABE1 /* BUKPickerTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +97,8 @@
 		4A2AC5AD220E34A095EACC0342807BB7 /* Pods-BUKPickerView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BUKPickerView_Tests-dummy.m"; sourceTree = "<group>"; };
 		4CC1B18097525DF8A7160A40D6E63C6D /* BUKDynamicPopViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicPopViewDelegate.h; path = Pod/protocols/BUKDynamicPopViewDelegate.h; sourceTree = "<group>"; };
 		4EAAE3356B74ED76AEF96E6787AB59A3 /* BUKPickerViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BUKPickerViewModel.h; sourceTree = "<group>"; };
+		53145CA11CBF6F6D0086E702 /* BUKGroupedPickerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUKGroupedPickerViewModel.h; sourceTree = "<group>"; };
+		53145CA21CBF6F6D0086E702 /* BUKGroupedPickerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUKGroupedPickerViewModel.m; sourceTree = "<group>"; };
 		544993BE53D5344C0C42D6D817F84904 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611B1C4FFFC70A39931B67021E9C4B6F /* BUKPickerViewDefaultCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BUKPickerViewDefaultCell.m; sourceTree = "<group>"; };
 		66C080718CB8E145A566E8099CB26A07 /* BUKDynamicAnimationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUKDynamicAnimationStyle.h; path = Pod/protocols/BUKDynamicAnimationStyle.h; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				611B1C4FFFC70A39931B67021E9C4B6F /* BUKPickerViewDefaultCell.m */,
 				4EAAE3356B74ED76AEF96E6787AB59A3 /* BUKPickerViewModel.h */,
 				4A136758BED49F9046C38FB517E2C521 /* BUKPickerViewModel.m */,
+				53145CA11CBF6F6D0086E702 /* BUKGroupedPickerViewModel.h */,
+				53145CA21CBF6F6D0086E702 /* BUKGroupedPickerViewModel.m */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				2A4C87AED4A26A1CC7774D118F5CA4CB /* BUKUIViewAnimationBehavior.h in Headers */,
 				83304044923CB8E5131CF6D20AA2C092 /* BUKXOrYMoveAnimationStyle.h in Headers */,
 				7713082B4178CEDC8918CA5B79B76840 /* UIView+BUKDynamicPopView.h in Headers */,
+				53145CA31CBF6F6D0086E702 /* BUKGroupedPickerViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +519,7 @@
 			files = (
 				D241F994070BF2B38A7C463F9BB8FF12 /* BUKDynamicPopView-dummy.m in Sources */,
 				04925D4908C3BAC3E72994B64D7E23AD /* BUKGravityCollisionBehavior.m in Sources */,
+				53145CA41CBF6F6D0086E702 /* BUKGroupedPickerViewModel.m in Sources */,
 				F4693F93199BB83E12788575722433F5 /* BUKUIViewAnimationBehavior.m in Sources */,
 				C753D54F36720FE6AB7CF3802BFC8002 /* BUKXOrYMoveAnimationStyle.m in Sources */,
 				A35AE781906CCD0892755B7958C64D27 /* UIView+BUKDynamicPopView.m in Sources */,
