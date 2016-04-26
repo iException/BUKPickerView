@@ -71,7 +71,8 @@
 
 @property (nonatomic, weak) id<BUKPickerViewDataSourceAndDelegate> buk_delegate;
 
-@property (nonatomic, assign) BOOL needUpdateSubviewsFrame;
+@property (nonatomic, assign) BOOL needUpdateSubviewsHeight;
+@property (nonatomic, assign) BOOL needUpdateSubviewsWidth;
 
 @end
 
@@ -298,20 +299,27 @@
 #pragma mark - BUKDynamicPopViewDelegate
 - (void)buk_dynamicPopViewWillShow:(UIView *)view
 {
-    self.needUpdateSubviewsFrame = NO;
+    self.needUpdateSubviewsWidth = NO;
+    self.needUpdateSubviewsHeight = NO;
 }
 
 - (void)buk_dynamicPopViewDidShow:(UIView *)view
 {
-    if (self.needUpdateSubviewsFrame) {
-        self.needUpdateSubviewsFrame = NO;
+    if (self.needUpdateSubviewsHeight || self.needUpdateSubviewsWidth) {
 
         [self.buk_tableViewHolders enumerateObjectsUsingBlock:^(BUKPickerViewTableViewHolder *  _Nonnull holder, NSUInteger idx, BOOL * _Nonnull stop) {
 
             CGRect frame = holder.frame;
-            frame.size.height = self.bounds.size.height;
+            if (self.needUpdateSubviewsHeight) {
+                frame.size.height = self.bounds.size.height;
+            } else if (self.needUpdateSubviewsWidth) {
+                frame.size.width = self.bounds.size.width;
+            }
             holder.frame = frame;
         }];
+
+        self.needUpdateSubviewsWidth = NO;
+        self.needUpdateSubviewsHeight = NO;
     }
 }
 
@@ -335,7 +343,20 @@
             return;
         }
 
-        self.needUpdateSubviewsFrame = YES;
+        [self.buk_tableViewHolders enumerateObjectsUsingBlock:^(BUKPickerViewTableViewHolder *  _Nonnull holder, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGRect frame = holder.frame;
+            if (frame.size.height == oldRect.size.height) {
+                frame.size.height = newRect.size.height;
+                self.needUpdateSubviewsHeight = YES;
+            } else if (frame.size.width == oldRect.size.width) {
+                frame.size.width = newRect.size.width;
+                self.needUpdateSubviewsWidth = YES;
+            }
+
+            if (!holder.buk_popViewIsAnimating) {
+                holder.frame = frame;
+            }
+        }];
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
