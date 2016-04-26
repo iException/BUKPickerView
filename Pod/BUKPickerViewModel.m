@@ -626,4 +626,8 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }
 }
 
+- (NSArray<BUKPickerViewItem *> *)selectionResult {
+    return [self.buk_selectionResult copy];
+}
+
 @end

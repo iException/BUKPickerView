@@ -141,6 +141,9 @@ typedef void (^BUKFinishLoadPickerViewItemsBlock)(NSArray *bukPickerViewItems);
 @property (nonatomic, strong) UIColor *evenLevelCellHighlightTextColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *evenLevelCellHighlightBgColor UI_APPEARANCE_SELECTOR;
 
+// selection result
+@property (nonatomic, readonly) NSArray<BUKPickerViewItem *> *selectionResult;
+
 // delegate
 @property (nonatomic, weak) id<BUKPickerViewModelDelegate> delegate;
 
