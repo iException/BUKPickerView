@@ -115,6 +115,9 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         return;
     }
 
+    BUKPickerViewItem *currentItem = [self.buk_selectionResult objectAtIndex:index];
+    currentItem.isSelected = NO;
+    item.isSelected = NO;
     [self.buk_selectionResult removeObjectAtIndex:index];
 
     NSArray *currentItems = [self.buk_itemsStack lastObject];
@@ -122,8 +125,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (indexOfCell == NSNotFound) {
         return;
     }
-    BUKPickerViewItem *currentItem = [currentItems objectAtIndex:indexOfCell];
-    currentItem.isSelected = NO;
+
     UITableView *tableView = [self.buk_pickerView tableViewAtDepth:self.buk_itemsStack.count - 1];
     [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexOfCell inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
