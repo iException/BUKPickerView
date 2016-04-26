@@ -78,31 +78,31 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (instancetype)initWithPickerViewItems:(NSArray *)items complete:(void (^)(id))complete
 {
     self = [super init];
-    
+
     if (self) {
-        
+
         [self buk_setupDefaultViewStyle];
-        
+
         self.buk_completeBlock = complete;
-        
+
         [self buk_addRootItems:items];
     }
-    
+
     return self;
 }
 
 - (instancetype)initWithLazyPickerViewItems:(void (^)(BUKFinishLoadPickerViewItemsBlock))lazyLoad complete:(void (^)(id))complete
 {
     self = [super init];
-    
+
     if (self) {
-        
+
         [self buk_setupDefaultViewStyle];
-        
+
         self.buk_completeBlock = complete;
         self.buk_lazyLoadBlock = lazyLoad;
     }
-    
+
     return self;
 }
 
@@ -137,14 +137,14 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (self.needTitleView && pickerView.titleView != self.titleView) {
         pickerView.titleView = self.titleView;
     }
-    
+
     return [self buk_itemsStackAtDepth:depth].count;
 }
 
 - (UITableViewCell *)buk_tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
     BUKPickerViewDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:kBUKPickerViewDefaultCellIdentifier forIndexPath:indexPath];
-    
+
     if (depth % 2 == 0) {
         cell.normalStateTextColor = self.oddLevelCellNormalTextColor;
         cell.normalStateBgColor = self.oddLevelCellNormalBgColor;
@@ -156,10 +156,10 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         cell.selectedStateTextColor = self.evenLevelCellHighlightTextColor;
         cell.selectedStateBgColor = self.evenLevelCellHighlightBgColor;
     }
-    
+
     BUKPickerViewItem *item = [self buk_itemAtIndexPath:indexPath depth:depth];
     [self buk_setupCell:cell withPickViewItem:item];
-    
+
     return cell;
 }
 
@@ -186,7 +186,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     }else {
         tableView.backgroundColor = self.evenLevelCellNormalBgColor;
     }
-    
+
     [tableView registerClass:[BUKPickerViewDefaultCell class] forCellReuseIdentifier:kBUKPickerViewDefaultCellIdentifier];
 }
 
@@ -195,31 +195,31 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (!self.coverRates || !self.coverRates.count) {
         return 1.0;
     }
-    
+
     NSInteger index = depth;
     if (self.coverRates.count <= index) {
         index = self.coverRates.count - 1;
     }
-    
+
     id value = [self.coverRates objectAtIndex:index];
-    
+
     if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
         return [value floatValue];
     }
-    
+
     return 1.0;
 }
 
 - (void)buk_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth pickerView:(BUKPickerView *)pickerView
 {
     self.buk_userInteracted = YES;
-    
+
     if ([pickerView popToDepth:depth]) {
         [self.buk_itemsStack removeObjectsInRange:NSMakeRange(depth + 1, self.buk_itemsStack.count - depth - 1)];
     }
-    
+
     BUKPickerViewItem *item = [self buk_itemAtIndexPath:indexPath depth:depth];
-    
+
     if (item.children && item.children.count != 0) {
         [self.buk_itemsStack addObject:item.children];
         [pickerView push];
@@ -229,14 +229,14 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             if (!chilren || ![chilren isKindOfClass:[NSArray class]]) {
                 return ;
             }
-            
+
             item.children = chilren;
-            
+
             [self buk_tableView:tableView didSelectRowAtIndexPath:indexPath depth:depth pickerView:pickerView];
-            
+
             [self buk_hideLoadingView];
         });
-        
+
     } else if (self.allowMultiSelect) {
         if (item.isSelected) {
             item.isSelected = NO;
@@ -272,22 +272,22 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (void)buk_pickerView:(BUKPickerView *)pickerView didFinishPopToDepth:(NSInteger)depth
 {
     self.buk_userInteracted = YES;
-    
+
     if (!self.needTitleView) {
         return;
     }
-    
+
     self.titleView.leftButton.hidden = depth == 0;
 }
 
 - (void)buk_pickerView:(BUKPickerView *)pickerView didFinishPushToDepth:(NSInteger)depth
 {
     [self buk_handleDefaultSelectionAtDepth:depth];
-    
+
     if (!self.needTitleView) {
         return;
     }
-    
+
     self.titleView.leftButton.hidden = depth == 0;
 }
 
@@ -327,16 +327,16 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         [self buk_asyncLoadLazyLoadItems];
         return nil;
     }
-    
+
     if (self.buk_itemsStack.count <= depth) {
         return nil;
     }
-    
+
     NSArray *items = [self.buk_itemsStack objectAtIndex:depth];
     if (!items || ![items isKindOfClass:[NSArray class]]) {
         return nil;
     }
-    
+
     return items;
 }
 
@@ -349,7 +349,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             [self.buk_pickerView push];
             [self buk_hideLoadingView];
         };
-        
+
         dispatch_async(dispatch_get_main_queue(), ^{
             [self buk_showLoadingView];
             self.buk_lazyLoadBlock(finishLoad);
@@ -360,17 +360,17 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (BUKPickerViewItem *)buk_itemAtIndexPath:(NSIndexPath *)indexPath depth:(NSInteger)depth
 {
     NSArray *items = [self buk_itemsStackAtDepth:depth];
-    
+
     if (!items || items.count <= indexPath.row) {
         return nil;
     }
-    
+
     BUKPickerViewItem *item = [items objectAtIndex:indexPath.row];
-    
+
     if (![item isKindOfClass:[BUKPickerViewItem class]]) {
         return nil;
     }
-    
+
     return item;
 }
 
@@ -378,25 +378,25 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 {
     NSInteger levels = 1;
     BUKPickerViewItem *item = items.lastObject;
-    
+
     if (!item) {
         return @[@1.0];
     }
-    
+
     while (item && item.children && item.children.count) {
         levels++;
         item = item.children.lastObject;
     }
-    
+
     if (item.lazyChildren) {
         levels++;
     }
-    
+
     NSMutableArray *rates = [[NSMutableArray alloc] initWithCapacity:levels];
     for (int i = 0; i < levels; i++) {
         [rates addObject:@(1-i*1.0/levels)];
     }
-    
+
     return rates;
 }
 
@@ -413,23 +413,25 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         NSAssert(NO, @"BUKPickerViewModel: Not Valid BUKPickerViewItem Children!");
         return;
     }
-    
+
+    __block BOOL hasSelectionInThisDepth = NO;
     [items enumerateObjectsUsingBlock:^(BUKPickerViewItem *item, NSUInteger idx, BOOL *stop) {
         if (![item isKindOfClass:[BUKPickerViewItem class]]) {
             NSAssert(NO, @"BUKPickerViewModel: Not Valid BUKPickerViewItem!");
             return;
         }
-        
+
         if (item.isSelected) {
             if (item.children) {
-                if (!self.allowMultiSelect) {
+                if (!hasSelectionInThisDepth) {
+                    hasSelectionInThisDepth = YES;
                     [self.buk_itemsStack addObject:item.children];
                 }
             } else {
                 [self.buk_selectionResult addObject:item];
             }
         }
-        
+
         if (item.children) {
             [self buk_loadDefaultSelectionsFromItems:item.children];
         }
@@ -439,7 +441,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
 - (void)buk_showLoadingView
 {
     [self.loadingView removeFromSuperview];
-    
+
     [self.buk_pickerView addSubview:self.loadingView];
     self.loadingView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.buk_pickerView addConstraints:@[
@@ -448,7 +450,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
                                           [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.buk_pickerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
                                           [NSLayoutConstraint constraintWithItem:self.loadingView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.buk_pickerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]
                                           ]];
-    
+
     self.loadingView.alpha = 0.0f;
     [UIView animateWithDuration:0.25f animations:^{
         self.loadingView.alpha = 1.0f;
@@ -474,36 +476,36 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (stackCount <= 1) {
         return;
     }
-    
+
     if (stackCount <= depth) {
         return;
     }
-    
+
     NSArray *currentItems = [self.buk_itemsStack objectAtIndex:depth];
     BUKPickerViewItem *selectedItem;
-    
+
     if (self.buk_itemsStack.count > depth + 1) {
-        
+
         if (self.buk_userInteracted) {
             return;
         }
-        
+
         if (self.allowMultiSelect) {
             return;
         }
-        
+
         NSArray *childrenItems = [self.buk_itemsStack objectAtIndex:depth+1];
-        
+
         BUKPickerViewItem *childItem = [childrenItems firstObject];
         selectedItem = childItem.parent;
     } else {
         selectedItem = [self.buk_selectionResult firstObject];
     }
-    
+
     if (!selectedItem) {
         return;
     }
-    
+
     NSInteger index = [currentItems indexOfObject:selectedItem];
     if (index != NSNotFound) {
         UITableView *tableView = [self.buk_pickerView tableViewAtDepth:depth];
@@ -556,7 +558,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (!_buk_itemsStack) {
         _buk_itemsStack = [[NSMutableArray alloc] init];
     }
-    
+
     return _buk_itemsStack;
 }
 
@@ -570,7 +572,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
         _titleView.leftButtonAction = ^(BUKPickerTitleView *titleView) {
             [weakSelf.buk_itemsStack removeLastObject];
             [weakSelf.buk_pickerView pop];
-            
+
             UITableView *tableView = [weakSelf.buk_pickerView tableViewAtDepth:weakSelf.buk_itemsStack.count - 1];
             if (tableView) {
                 [tableView deselectRowAtIndexPath:tableView.indexPathForSelectedRow animated:NO];
@@ -581,7 +583,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
             [weakSelf.buk_pickerView buk_dynamicHide];
         };
     }
-    
+
     return _titleView;
 }
 
@@ -590,7 +592,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (!_buk_selectionResult) {
         _buk_selectionResult = [[NSMutableArray alloc] init];
     }
-    
+
     return _buk_selectionResult;
 }
 
@@ -599,11 +601,11 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     if (!_loadingView) {
         _loadingView = [[UIView alloc] init];
         _loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-        
+
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [indicator startAnimating];
         [_loadingView addSubview:indicator];
-        
+
         indicator.translatesAutoresizingMaskIntoConstraints = NO;
         [_loadingView addConstraints:@[
                                        [NSLayoutConstraint constraintWithItem:indicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_loadingView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
@@ -611,7 +613,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
                                        ]
          ];
     }
-    
+
     return _loadingView;
 }
 
@@ -620,7 +622,7 @@ static NSString * const kBUKPickerViewDefaultCellIdentifier = @"kBUKPickerViewDe
     [self willChangeValueForKey:NSStringFromSelector(@selector(allowMultiSelect))];
     _allowMultiSelect = allowMultiSelect;
     [self didChangeValueForKey:NSStringFromSelector(@selector(allowMultiSelect))];
-    
+
     if (!_titleView) {
         self.titleView.rightButton.hidden = !allowMultiSelect;
     }
